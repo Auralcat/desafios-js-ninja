@@ -54,4 +54,43 @@ const fillMeUp = (x, y, z) => {
     return [x, y, z].reduce((x, y) => x * y) + 2;
 };
 
-console.log(fillMeUp(1, 2, 3));
+// Invoque a função criada acima, passando só dois números como argumento.
+console.log(fillMeUp(1, 2));
+
+// Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado)
+// "Preencha todos os valores corretamente!"
+
+/*
+Crie uma função com as seguintes características:
+1. A função deve receber 3 argumentos.
+2. Se somente um argumento for passado, retorne o valor do argumento.
+3. Se dois argumentos forem passados, retorne a soma dos dois argumentos.
+4. Se todos os argumentos forem passados, retorne a soma do primeiro
+   com o segundo, e o resultado, dividido pelo terceiro.
+5. Se nenhum argumento for passado, retorne o valor booleano 'false'.
+6. E ainda, se nenhuma das condições forem atendidas, retorne 'null'.
+*/
+
+function baz() {
+    switch (arguments.length) {
+    case 0:
+        return false;
+    case 1:
+        return arguments[0];
+    case 2:
+        return arguments[0] + arguments[1];
+    case 3:
+        return (arguments[0] + arguments[1]) / arguments[2];
+    default:
+        return null;
+    }
+}
+
+// Invoque a função acima utilizando todas as possibilidades (com
+// nenhum argumento, com um, com dois e com três.) Coloque um
+// comentário de linha ao lado da função com o resultado de cada invocação.
+console.log(baz());
+console.log(baz("foo"));
+console.log(baz(20, 30));
+console.log(6, 2, 3);
+console.log(baz(1, 2, 3, 4));
