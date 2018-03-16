@@ -27,7 +27,7 @@ const souninja = true;
 
 // Declare uma variável chamada `comida` que recebe um array com os valores
 // 'arroz', 'feijão' e 'ovo'.
-const comida = [ 'arroz',  'feijao',  'ovo'];
+const comida = [ "arroz",  "feijao",  "ovo"];
 
 // Digite a instrução que imprime o valor de feijão,  que está na variável
 // `comida`.
@@ -43,10 +43,10 @@ const compare2 = myvar >= soma;
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números,  e
 // retorne o resultado da divisão entre eles.
-const divisaoES6 = (x,  y) => x / y;
+const divisaoES6 = (x, y) => x / y;
 
 // ES5:
 function divisaoES5(x, y) { return x / y; }
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
-console.log(divisaoES6(10,  2));
+console.log(divisaoES6(10, 2));
