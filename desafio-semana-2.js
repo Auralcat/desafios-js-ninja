@@ -46,12 +46,12 @@ console.log(somaEImprime(foo, 33));
 3. O retorno da função deve ser a multiplicação dos 3 argumentos,
    somando 2 ao resultado da multiplicação.
 */
+
 const fillMeUp = (x, y, z) => {
-    console.log(`x = ${x}, y = ${y}, z = ${z}`);
-    if ([x, y, z].some(t => t == "undefined")) {
+    if ([x, y, z].some(t => typeof(t) == "undefined")) {
         return "Preencha todos os valores corretamente!";
     }
     return [x, y, z].reduce((x, y) => x * y) + 2;
 };
 
-console.log(fillMeUp(1, 2));
+console.log(fillMeUp(1, 2, 3));
