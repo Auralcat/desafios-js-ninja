@@ -13,17 +13,19 @@ let foo = {};
  - 'andando' - Boolean - recebe "falso" por padrão
  - 'caminhouQuantosMetros' - Number - recebe "zero" por padrão
 */
-let pessoa = (nome, sobrenome, genero, idade, altura, peso, andando,
-              caminhouQuantosMetros) => {
-    this.nome = nome;
-    this.sobrenome = sobrenome;
-    this.genero = genero;
-    this.idade = idade;
-    this.altura = altura;
-    this.peso = peso;
-    this.andando = false;
-    this.caminhouQuantosMetros = "zero";
+
+// Fiz um construtor pra pessoa
+const criarPessoa = (nome, sobrenome, genero, idade, altura, peso) => {
+    return {
+        nome, sobrenome,
+        genero, idade,
+        altura, peso,
+        andando: false,
+        caminhouQuantosMetros: "zero"
+    };
 };
+
+let pessoa = criarPessoa("Nadir", "Teles", "não-binária", 25, 1.72, 65);
 
 // ------------------------------------------------------------------------------
 // EXTRA - Usando composição de objetos para deixar essa função com menos
@@ -75,16 +77,49 @@ pessoa.parar = () => {
  Crie um método chamado 'nomeCompleto', que retorne a frase:
  - "Olá! Meu nome é [NOME] [SOBRENOME]!"
  */
-pessoa.nomeCompleto = () => `Olá! Meu nome é ${this.nome} ${this.sobrenome}!`;
+pessoa.nomeCompleto = () => `Olá! Meu nome é ${pessoa.nome} ${pessoa.sobrenome}!`;
 
 /*
  Crie um método chamado 'mostrarIdade', que retorne a frase:
  - "Olá, eu tenho [IDADE] anos!"
  */
-pessoa.mostrarIdade = () => `Olá! eu tenho ${this.idade} anos!`;
+pessoa.mostrarIdade = () => `Olá! eu tenho ${pessoa.idade} anos!`;
 
 /*
  Crie um método chamado 'mostrarPeso', que retorne a frase:
  - "Eu peso [PESO] Kg."
  */
-pessoa.mostrarPeso = () => `Eu peso ${this.peso} Kg.`;
+pessoa.mostrarPeso = () => `Eu peso ${pessoa.peso} Kg.`;
+
+
+/*
+ Crie um método chamado 'mostrarAltura', que retorne a frase:
+ - "Minha altura é [ALTURA] m."
+ */
+pessoa.mostrarAltura = () => `Minha altura é ${pessoa.altura} m.`;
+
+/*
+ Agora vamos brincar um pouco com o objeto criado:
+ Qual o nome completo da pessoa? (Use a instrução para responder e
+ comentários inline ao lado da instrução para mostrar qual foi a
+ resposta retornada)
+ */
+console.log(pessoa.nomeCompleto());
+
+/*
+ Qual a idade da pessoa? (Use a instrução para responder e
+ comentários inline ao lado da instrução para mostrar qual foi a
+ resposta retornada)
+ */
+
+/*
+ Qual o peso da pessoa? (Use a instrução para responder e
+ comentários inline ao lado da instrução para mostrar qual foi a
+ resposta retornada)
+ */
+
+/*
+ Qual a altura da pessoa? (Use a instrução para responder e
+ comentários inline ao lado da instrução para mostrar qual foi a
+ resposta retornada)
+ */
