@@ -45,7 +45,7 @@ let oiEuSou = (primeiro_nome, sobrenome, genero) => {
 // método deve alterar o valor da propriedade 'idade' dessa pessoa,
 // somando '1' a cada vez que for chamado.
 pessoa.fazerAniversario = () => {
-    this.idade++;
+    pessoa.idade++;
 };
 
 /*
@@ -83,7 +83,7 @@ pessoa.nomeCompleto = () => `Olá! Meu nome é ${pessoa.nome} ${pessoa.sobrenome
  Crie um método chamado 'mostrarIdade', que retorne a frase:
  - "Olá, eu tenho [IDADE] anos!"
  */
-pessoa.mostrarIdade = () => `Olá! eu tenho ${pessoa.idade} anos!`;
+pessoa.mostrarIdade = () => `Olá! Eu tenho ${pessoa.idade} anos!`;
 
 /*
  Crie um método chamado 'mostrarPeso', que retorne a frase:
@@ -139,3 +139,4 @@ for (let i in [1, 2, 3]) {
  comentários inline ao lado da instrução para mostrar qual foi a
  resposta retornada)
  */
+console.log(pessoa.mostrarIdade());
