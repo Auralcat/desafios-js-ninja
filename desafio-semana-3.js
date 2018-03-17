@@ -173,4 +173,53 @@ console.log(pessoa.caminhouQuantosMetros);
 
  Só que, antes de retornar a string, você vai fazer algumas
  validações:
+ - Se o 'genero' de 'pessoa for "Feminino", a frase acima, no início
+ da apresentação, onde diz "eu sou o", deve mostrar "a" no lugar do
+ "o";
+ - Se a idade for '1', a frase acima, na parte que fala da idade, vai
+ mostrar a palavra "ano" ao invés de "anos", pois é singular;
+ - Se a quantidade de metros caminhados for igual a '1', então a
+ palavra que deve conter no retorno da frase acima é "metro" no lugar
+ de "metros".
+ - Para cada validação, você irá declarar uma variável localmente
+ (dentro do método), que será concatenada com a frase de retorno,
+ mostrando a resposta correta, de acordo com os dados inseridos no objeto.
  */
+pessoa.apresentacao = () => {
+    // Escolhendo o pronome:
+    const particulaPronome = () => {
+        let padrao = "Olá, eu sou ";
+        switch (pessoa.genero.toLowerCase) {
+            case "feminino":
+                return padrao + "a " + pessoa.nome + " " + pessoa.sobrenome;
+            case "masculino":
+                return padrao + "o " + pessoa.nome + " " + pessoa.sobrenome;
+        }
+        return padrao + pessoa.nome + " " + pessoa.sobrenome;
+    };
+
+    // Validando idade
+    const particulaIdade = () => {
+        let padrao = " tenho " + pessoa.idade;
+        if (pessoa.idade === 1) {
+            return padrao + " ano";
+        }
+        return padrao + " anos";
+    };
+
+    // Validando metros caminhados
+    const particulaMetros = () => {
+        let padrao = " só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros;
+        if (pessoa.caminhouQuantosMetros === 1) {
+            return padrao + " metro!";
+        }
+        return padrao + " metros!";
+    };
+
+    return [particulaPronome(), particulaIdade(), " " + pessoa.altura
+            + " m", " meu"
+            + " peso é " + pessoa.peso + " Kg e", particulaMetros()].join(",");
+};
+
+// Agora, apresente-se ;)
+console.log(pessoa.apresentacao());
