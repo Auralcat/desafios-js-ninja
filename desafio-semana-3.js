@@ -21,7 +21,7 @@ const criarPessoa = (nome, sobrenome, genero, idade, altura, peso) => {
         genero, idade,
         altura, peso,
         andando: false,
-        caminhouQuantosMetros: "zero"
+        caminhouQuantosMetros: 0
     };
 };
 
@@ -60,8 +60,8 @@ pessoa.fazerAniversario = () => {
  booleano que representa "verdadeiro";
  */
 pessoa.andar = (metrosCaminhados) => {
-    this.caminhouQuantosMetros += metrosCaminhados;
-    this.andando = true;
+    pessoa.caminhouQuantosMetros += metrosCaminhados;
+    pessoa.andando = true;
 };
 
 /*
@@ -70,7 +70,7 @@ pessoa.andar = (metrosCaminhados) => {
  representa "falso".
  */
 pessoa.parar = () => {
-    this.andando = false;
+    pessoa.andando = false;
 };
 
 /*
@@ -140,3 +140,37 @@ for (let i in [1, 2, 3]) {
  resposta retornada)
  */
 console.log(pessoa.mostrarIdade());
+
+/*
+ Agora, faça a 'pessoa' caminhar alguns metros, invocando o método
+ 'andar' 3x, com metragens diferentes passadas por parâmetro.
+ */
+let random = [13, 16, 19];
+for (let index in random) {
+    pessoa.andar(random[index]);
+}
+
+/*
+ A pessoa ainda está andando? (Use a instrução para responder e
+ comentários inline ao lado da instrução para mostrar qual foi a
+ resposta retornada)
+ */
+console.log(pessoa.andando); // Sim
+
+/*
+ Quantos metros a pessoa andou? (Use uma instrução para responder e
+ comentários inline ao lado da instrução para mostrar qual foi a
+ resposta retornada)
+ */
+console.log(pessoa.caminhouQuantosMetros);
+/*
+ Agora vamos deixar a brincadeira um pouco mais divertida! :D
+ Crie um método para o objeto 'pessoa' chamadado 'apresentacao'. Esse
+ método deve retornar a string:
+ - "Olá, eu sou o [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu
+ peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS]
+ metros!"
+
+ Só que, antes de retornar a string, você vai fazer algumas
+ validações:
+ */
