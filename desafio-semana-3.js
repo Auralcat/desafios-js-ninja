@@ -207,6 +207,10 @@ pessoa.apresentacao = () => {
         return padrao + " anos";
     };
 
+    // Colocar métodos pra mostrar altura e peso
+    const particulaAltura = () => " " + pessoa.altura + " m";
+    const particulaPeso = () => " meu peso é " + pessoa.peso + " Kg e";
+
     // Validando metros caminhados
     const particulaMetros = () => {
         let padrao = " só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros;
@@ -216,9 +220,9 @@ pessoa.apresentacao = () => {
         return padrao + " metros!";
     };
 
-    return [particulaPronome(), particulaIdade(), " " + pessoa.altura
-            + " m", " meu"
-            + " peso é " + pessoa.peso + " Kg e", particulaMetros()].join(",");
+    return [particulaPronome(), particulaIdade(),
+            particulaAltura(), particulaPeso(),
+            particulaMetros()].join(",");
 };
 
 // Agora, apresente-se ;)
