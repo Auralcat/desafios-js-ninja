@@ -104,22 +104,38 @@ pessoa.mostrarAltura = () => `Minha altura é ${pessoa.altura} m.`;
  comentários inline ao lado da instrução para mostrar qual foi a
  resposta retornada)
  */
-console.log(pessoa.nomeCompleto());
+console.log(pessoa.nomeCompleto()); // Olá! Meu nome é Nadir Teles!
 
 /*
  Qual a idade da pessoa? (Use a instrução para responder e
  comentários inline ao lado da instrução para mostrar qual foi a
  resposta retornada)
  */
+console.log(pessoa.mostrarIdade());
 
 /*
  Qual o peso da pessoa? (Use a instrução para responder e
  comentários inline ao lado da instrução para mostrar qual foi a
  resposta retornada)
  */
+console.log(pessoa.mostrarPeso());
 
 /*
  Qual a altura da pessoa? (Use a instrução para responder e
+ comentários inline ao lado da instrução para mostrar qual foi a
+ resposta retornada)
+ */
+console.log(pessoa.mostrarAltura());
+
+/*
+ Faça a 'pessoa' fazer 3 aniversários.
+ */
+for (let i in [1, 2, 3]) {
+    pessoa.fazerAniversario();
+}
+
+/*
+ Quantos anos a 'pessoa' tem agora? (Use a instrução para responder e
  comentários inline ao lado da instrução para mostrar qual foi a
  resposta retornada)
  */
