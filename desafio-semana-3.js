@@ -230,5 +230,18 @@ console.log(pessoa.apresentacao());
 
 // Exportação das funções para teste:
 module.exports = {
-    criarPessoa
+    criarPessoa,
+    andar: pessoa.andar,
+    parar: pessoa.parar,
+    nomeCompleto: pessoa.nomeCompleto,
+    mostrarIdade: pessoa.mostrarIdade,
+    mostrarPeso: pessoa.mostrarPeso,
+    mostrarAltura: pessoa.mostrarAltura,
+    particulaAltura: pessoa.apresentacao.particulaAltura,
+    particulaIdade: pessoa.apresentacao.particulaIdade,
+    particulaMetros: pessoa.apresentacao.particulaMetros,
+    particulaPeso: pessoa.apresentacao.particulaPeso,
+    particulaPronome: pessoa.apresentacao.particulaPronome,
+    apresentacao: pessoa.apresentacao,
+    fazerAniversario: pessoa.fazerAniversario
 };
