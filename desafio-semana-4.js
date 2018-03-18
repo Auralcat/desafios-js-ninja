@@ -59,15 +59,21 @@ let carro = criarCarro("Hafei", "Towner", "ABC-1234",
  Crie um método chamado 'mudarCor', que mude a cor do carro conforme a
  cor passada por parâmetro.
  */
+carro.mudarCor = (novaCor) => {
+    carro.cor = novaCor;
+};
 
 /*
  Crie um método chamado 'obterCor', que retorne a cor do carro.
  */
+carro.obterCor = () => carro.cor;
 
 /*
  Crie um método chamado 'obterModelo', que retorne o modelo do carro.
  */
+carro.obterModelo = () => carro.modelo;
 
 /*
  Crie um método chamado 'obterMarca', que retorne a marca do carro.
  */
+carro.obterMarca = () => carro.marca;
