@@ -227,3 +227,8 @@ pessoa.apresentacao = () => {
 
 // Agora, apresente-se ;)
 console.log(pessoa.apresentacao());
+
+// Exportação das funções para teste:
+module.exports = {
+    criarPessoa
+};
