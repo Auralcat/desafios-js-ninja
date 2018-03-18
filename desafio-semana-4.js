@@ -98,12 +98,32 @@ carro.obterMarcaModelo = () =>
  método deve retornar a frase "O carro já está lotado!"
  - Se ainda houverem lugares no carro, mas a quantidade de pessoas
  passadas por parâmetro for ultrapassar o limite de assentos do carro,
- então você deve mostrr quantos assentos ainda podem ser ocupados, com
+ então você deve mostrar quantos assentos ainda podem ser ocupados, com
  a frase:
  "Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
  - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no
  retorno citado acima, no lugar de "pessoas".
  */
 carro.adicionarPessoas = (qtde_pessoas) => {
+    const espacoSobrando = carro.assentos - carro.quantidadePessoas;
 
+    // Quando todos os assentos estão ocupados
+    if (carro.quantidadePessoas === carro.assentos) {
+        return "O carro já está lotado!";
+    }
+
+    // Se você tentar colocar mais pessoas do que o carro comporta
+    if (qtde_pessoas > espacoSobrando) {
+        let quantosCabem = `Só cabem mais ${espacoSobrando} `;
+        switch (espacoSobrando) {
+        case 1:
+            return quantosCabem + "pessoa!";
+        default:
+            return quantosCabem + "pessoas!";
+        }
+    } else {
+        // Adicione as pessoas se tiver lugar
+        carro.quantidadePessoas += qtde_pessoas;
+    }
+    return `Já temos ${carro.quantidadePessoas} no carro!`;
 };
