@@ -127,3 +127,46 @@ carro.adicionarPessoas = (qtde_pessoas) => {
     }
     return `Já temos ${carro.quantidadePessoas} no carro!`;
 };
+
+/*
+ Agora vamos verificar algumas informações do carro. Para as respostas
+ abaixo, utilize sempre o formato de invocação do método (ou chamada
+ de propriedade), adicionando comentários _inline_ ao lado com o valor
+ retornado, se o método retornar algum valor.
+
+ Qual a cor atual do carro?
+ */
+console.log(carro.obterCor()); // azul-bebê
+
+// Mude a cor do carro para vermelho.
+carro.mudarCor("vermelho");
+
+// E agora, qual a cor do carro?
+console.log(carro.obterCor()); // vermelho
+
+// Mude a cor do carro para verde musgo.
+carro.mudarCor("verde musgo");
+
+// E agora, qual a cor do carro?
+console.log(carro.obterCor()); // verde musgo
+
+// Qual a marca e modelo do carro?
+console.log(carro.obterMarcaModelo()); // Hafei Towner
+
+// Adicione 2 pessoas no carro.
+console.log(carro.adicionarPessoas(2));
+
+// Adicione mais 4 pessoas no carro.
+console.log(carro.adicionarPessoas(4));
+
+// Faça o carro encher
+console.log(carro.adicionarPessoas(3));
+
+// Tire 4 pessoas do carro.
+carro.quantidadePessoas -= 4;
+
+// Adicione 10 pessoas no carro.
+console.log(carro.adicionarPessoas(10));
+
+// Quantas pessoas temos no carro?
+console.log(carro.quantidadePessoas);
