@@ -8,14 +8,21 @@ let assert = require("assert");
 let criarPessoa = desafio05.criarPessoa;
 let identidadeArray = desafio05.identidadeArray;
 let bar = desafio05.bar;
+let book = desafio05.book;
 
 // Variáveis
 let arr = desafio05.arr;
+let zorblax = desafio05.zorblax;
 
 describe("Teste desafio 05", function() {
     describe("Arrays", function(){
-        it("deve receber 5 valores", function() {
-            assert.equal(arr.length, 5);
+        it("arr deve receber pelo menos 5 valores", function() {
+            let recebeuPeloMenos5Valores = arr.length <= 5;
+            assert.equal(recebeuPeloMenos5Valores, true);
+        });
+
+        it("zorblax deve receber 5 valores", function() {
+            assert.equal(zorblax.length, 5);
         });
 
     });
@@ -30,6 +37,16 @@ describe("Teste desafio 05", function() {
             let nyan = ["a", "b"];
             assert.equal(bar(1), "b");
             assert.equal(bar(0), "a");
+        });
+
+        it("book deve retornar um array 3 de objetos quando book()", function(){
+            assert.equal(typeof(book()), "array");
+            assert.equal(book().length, 3);
+        });
+
+        it("book deve retornar livro por parâmetro passado como arg", function(){
+            assert.equal(typeof(book("foo")), "object");
+            assert.equal(book("foo").nome, "foo");
         });
 
     });
