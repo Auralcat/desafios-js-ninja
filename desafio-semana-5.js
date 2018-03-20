@@ -29,7 +29,7 @@ console.log(identidadeArray(arr)[1]);
  parâmetro.
  */
 const bar = (arr_entrada, num) => {
-    if (Array.isArray(arr_entrada) && typeof(num) === "Number") {
+    if (Array.isArray(arr_entrada) && typeof(num) === "number") {
         return arr[num];
     }
     return null;
