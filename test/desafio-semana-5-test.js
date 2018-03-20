@@ -30,7 +30,7 @@ describe("Teste desafio 05", function() {
     describe("Funções", function() {
         it("identidadeArray deve retornar um array", function() {
             let foo = [1, 2];
-            assert.equal(identidadeArray(foo) instanceof Array)");
+            assert.equal(identidadeArray(foo) instanceof Array, true);
         });
 
         it("bar deve retornar valor indicado pelo segundo parâmetro", function() {

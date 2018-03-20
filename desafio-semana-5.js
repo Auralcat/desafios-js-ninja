@@ -9,7 +9,7 @@ let arr = ["foo", true, NaN, 0, /aaa/, "boo"];
  array.
  */
 const identidadeArray = (a) => {
-    if (typeof(a) === "array") {
+    if (Array.isArray(a)) {
         return a;
     }
     return null;
@@ -19,5 +19,3 @@ const identidadeArray = (a) => {
 module.exports = {
     arr, identidadeArray
 };
-
-console.log(arr instanceof Array);
