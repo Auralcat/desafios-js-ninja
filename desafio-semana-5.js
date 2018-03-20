@@ -1,3 +1,4 @@
+console.log("---DESAFIO 05---");
 /*
  Crie uma variável qualquer, que receba um array com alguns valores
  aleatórios - ao menos 5 - (ficap or sua conta os valores do array)
