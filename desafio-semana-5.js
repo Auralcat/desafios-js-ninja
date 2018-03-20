@@ -30,12 +30,18 @@ console.log(identidadeArray(arr)[1]);
  */
 const bar = (arr_entrada, num) => {
     if (Array.isArray(arr_entrada) && typeof(num) === "number") {
-        return arr[num];
+        return arr_entrada[num];
     }
     return null;
 };
 
+/*
+ Declare uma variável que recebe um array com 5 valores, de tipos
+ diferentes.
+ */
+let zorblax = [1, "aa", true, null, /abc/];
+
 // Exportações do módulo
 module.exports = {
-    arr, identidadeArray, bar
+    arr, identidadeArray, bar, zorblax
 };
