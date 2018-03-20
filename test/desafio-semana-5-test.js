@@ -24,6 +24,11 @@ describe("Teste desafio 05", function() {
             assert.equal(zorblax.length, 5);
         });
 
+        it ("zorblax deve ter 5 tipos diferentes dentro de si", function() {
+            let zorbSet = new Set(zorblax.map(x => typeof(x)));
+            assert.equal(zorbSet.size, zorblax.length);
+        });
+
     });
 
     describe("Funções", function() {

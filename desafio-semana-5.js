@@ -39,7 +39,7 @@ const bar = (arr_entrada, num) => {
  Declare uma variável que recebe um array com 5 valores, de tipos
  diferentes.
  */
-let zorblax = [1, "aa", true, null, /abc/];
+let zorblax = [1, "aa", true, null, undefined];
 
 // Exportações do módulo
 module.exports = {
