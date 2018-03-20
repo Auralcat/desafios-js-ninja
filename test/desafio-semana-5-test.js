@@ -5,7 +5,6 @@ let assert = require("assert");
 
 // Importar funções e variáveis que vamos testar
 // Funções
-let criarPessoa = desafio05.criarPessoa;
 let identidadeArray = desafio05.identidadeArray;
 let bar = desafio05.bar;
 let book = desafio05.book;

@@ -1,3 +1,4 @@
+console.log("---DESAFIO 03---");
 // Declarar uma variável qualquer, que receba um objeto vazio.
 let foo = {};
 

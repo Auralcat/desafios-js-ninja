@@ -15,6 +15,11 @@ const identidadeArray = (a) => {
     return null;
 };
 
+/*
+ Imprima o segundo índice do array retornado pela função criada acima.
+ */
+console.log(identidadeArray(arr)[1]);
+
 // Exportações do módulo
 module.exports = {
     arr, identidadeArray
