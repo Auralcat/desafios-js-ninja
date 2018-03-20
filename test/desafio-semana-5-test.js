@@ -34,8 +34,8 @@ describe("Teste desafio 05", function() {
 
         it("bar deve retornar valor indicado pelo segundo parâmetro", function() {
             let nyan = ["a", "b"];
-            assert.equal(bar(1), "b");
-            assert.equal(bar(0), "a");
+            assert.equal(bar[1], "b");
+            assert.equal(bar[0], "a");
         });
 
         it("book deve retornar um array 3 de objetos quando book()", function() {

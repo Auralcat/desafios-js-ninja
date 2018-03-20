@@ -25,11 +25,14 @@ console.log(identidadeArray(arr)[1]);
  Crie uma função que receba dois parâmetros: o primeiro, um array de
  valores; e o segundo, um número. A função deve retornar o valor de um
  índice do array que foi passado no primeiro parâmetro. O índice usado
- para retornar o valore, deve ser o número passado no segundo
+ para retornar o valor, deve ser o número passado no segundo
  parâmetro.
  */
 const bar = (arr_entrada, num) => {
-
+    if (Array.isArray(arr_entrada) && typeof(num) === "Number") {
+        return arr[num];
+    }
+    return null;
 };
 
 // Exportações do módulo
