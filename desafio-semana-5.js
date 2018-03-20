@@ -20,7 +20,18 @@ const identidadeArray = (a) => {
  */
 console.log(identidadeArray(arr)[1]);
 
+/*
+ Crie uma função que receba dois parâmetros: o primeiro, um array de
+ valores; e o segundo, um número. A função deve retornar o valor de um
+ índice do array que foi passado no primeiro parâmetro. O índice usado
+ para retornar o valore, deve ser o número passado no segundo
+ parâmetro.
+ */
+const bar = (arr_entrada, num) => {
+
+};
+
 // Exportações do módulo
 module.exports = {
-    arr, identidadeArray
+    arr, identidadeArray, bar
 };
