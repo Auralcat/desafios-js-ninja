@@ -45,3 +45,11 @@ let zorblax = [1, "aa", true, null, undefined];
 module.exports = {
     arr, identidadeArray, bar, zorblax
 };
+
+/* Invoque a função acima, fazendo-a retornar todos os valores do
+ último array criado.
+ */
+for (var i in zorblax) {
+    // Índices passados nessa sintaxe são strings!
+    console.log(bar(zorblax, Number(i)));
+}
