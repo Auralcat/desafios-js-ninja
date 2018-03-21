@@ -67,25 +67,27 @@ for (var i in zorblax) {
 const book = (nome) => {
 
     const catalogo = {
-        livro1: {
-            nome: "O Apanhador no Campo de Centeio",
+        "O Apanhador no Campo de Centeio": {
             quantidadePaginas: 214,
             autor: "J. D. Salinger",
             editora: "Desconhecida"
         },
-        livro2: {
-            nome: "Drácula",
+        "Drácula": {
             quantidadePaginas: 586,
             autor: "Bram Stoker",
             editora: "Desconhecida"
         },
-        livro3: {
-            nome: "Hagakure",
+        "Hagakure": {
             quantidadePaginas: 176,
             autor: "Yamamoto Tsunetomo",
             editora: "Desconhecida"
         }
     };
+
+    if (catalogo.hasOwnProperty(nome)) {
+        return catalogo[nome];
+    }
+    return catalogo;
 };
 
 // Exportações do módulo
