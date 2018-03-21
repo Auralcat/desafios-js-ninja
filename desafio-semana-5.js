@@ -41,11 +41,6 @@ const bar = (arr_entrada, num) => {
  */
 let zorblax = [1, "aa", true, null, undefined];
 
-// Exportações do módulo
-module.exports = {
-    arr, identidadeArray, bar, zorblax
-};
-
 /* Invoque a função acima, fazendo-a retornar todos os valores do
  último array criado.
  */
@@ -53,3 +48,26 @@ for (var i in zorblax) {
     // Índices passados nessa sintaxe são strings!
     console.log(bar(zorblax, Number(i)));
 }
+
+/*
+ Crie uma função chamada 'book', que recebe um parâmetro, que será o
+ nome do livro. Dentro dessa função, declare uma variável que recebe
+ um objeto com as seguinte características:
+ - esse objeto irá receber 3 propriedades, que serão nome de livros;
+ - cada uma dessas propriedades será um novo objeto, que terá outras 3
+ propriedades:
+     - 'quantidadePaginas' - Number [quantidade de páginas]
+     - 'autor' - String
+     - 'editora' - String
+ - A função deve retornar o objeto referente ao livro passado por
+ parâmetro.
+ - Se o parâmetro não for passado, a função deve retornar o objeto com
+ todos os livros.
+ */
+const book = (nome) => {
+    nome
+}
+// Exportações do módulo
+module.exports = {
+    arr, identidadeArray, bar, zorblax, book
+};
