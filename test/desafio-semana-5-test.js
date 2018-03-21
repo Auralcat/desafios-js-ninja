@@ -43,19 +43,17 @@ describe("Teste desafio 05", function() {
             assert.equal(bar(nyan, 0), "a");
         });
 
-        it("book deve retornar um array 3 de objetos quando book()", function() {
-            assert.equal(typeof(book()), "array");
-            assert.equal(book().length, 3);
+        it("book deve retornar o catálogo quando book()", function() {
+            assert.equal(typeof(book()), "object");
         });
 
         it("book deve retornar livro por parâmetro passado como arg", function() {
-            assert.equal(typeof(book("foo")), "object");
-            assert.equal(book("foo").nome, "foo");
+            assert.equal(typeof(book("Drácula")), "object");
+            assert.equal(book("Drácula").autor, "Bram Stoker");
         });
 
         it("book tem 3 objetos dentro de si", function() {
-            assert.equal(book.catalogo.length, 3);
-            assert.equal(typeof(book.catalogo), "object");
+            assert.equal(Object.keys(book()).length, 3);
         });
 
         // Vou declarar aqui porque quero usar nas duas próximas funções

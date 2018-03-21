@@ -90,6 +90,8 @@ const book = (nome) => {
     return catalogo;
 };
 
+console.log(Object.keys(book()).length);
+
 // Exportações do módulo
 module.exports = {
     arr, identidadeArray, bar, zorblax, book
