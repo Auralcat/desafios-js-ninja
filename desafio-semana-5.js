@@ -65,8 +65,29 @@ for (var i in zorblax) {
  todos os livros.
  */
 const book = (nome) => {
-    nome
-}
+
+    const catalogo = {
+        livro1: {
+            nome: "O Apanhador no Campo de Centeio",
+            quantidadePaginas: 214,
+            autor: "J. D. Salinger",
+            editora: "Desconhecida"
+        },
+        livro2: {
+            nome: "Drácula",
+            quantidadePaginas: 586,
+            autor: "Bram Stoker",
+            editora: "Desconhecida"
+        },
+        livro3: {
+            nome: "Hagakure",
+            quantidadePaginas: 176,
+            autor: "Yamamoto Tsunetomo",
+            editora: "Desconhecida"
+        }
+    };
+};
+
 // Exportações do módulo
 module.exports = {
     arr, identidadeArray, bar, zorblax, book
