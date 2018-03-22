@@ -11,7 +11,7 @@ let championship = desafio06.championship;
 let teams = desafio06.teams;
 
 describe("Teste desafio 06", function() {
-    describe("Variáveils", function() {
+    describe("Variáveis", function() {
         it("championship deve conter um String", function() {
             assert.equal(typeof(championship), "string");
         });
