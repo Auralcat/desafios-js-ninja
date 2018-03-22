@@ -39,8 +39,14 @@ console.log( "Times que estão participando do campeonato:", teams);
  "Não temos a informação do time que está nessa posição."
  */
 const showTeamPosition(pos) => {
-
+    // Assegurando que a entrada é um número
+    if (typeof(pos) === "number") {
+        return pos;
+    }
+    return null;
 };
+
+console.log(showTeamPosition(12));
 
 module.exports = {
     championship, teams,
