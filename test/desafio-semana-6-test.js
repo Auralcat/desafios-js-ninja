@@ -28,15 +28,19 @@ describe("Teste desafio 06", function() {
            + " retornar um String", function() {
             // Nos testes você só consegue ver a saída das funções,
             // não a entrada, mas...
-            assert.equal(typeof(showTeamPosition(0)), "string");
-            assert.equal(typeof(showTeamPosition("aaa"), null));
+            assert.equal(typeof(showTeamPosition(1)), "string");
+            assert.equal(showTeamPosition("aaa") === null, true);
+        });
+
+        it("showTeamPosition retorna null para posição zero", function() {
+            assert.equal(showTeamPosition(0), null);
         });
 
         it("showTeamPosition deve retornar a frase 'O time que está em"
            + " [POSIÇÃO]º lugar é o [NOME_DO_TIME].' ", function() {
-            let pattern = /O time que está em \d+º lugar é o \w+\./;
-            assert.equal(pattern.test(showTeamPosition(0), true));
-            assert.equal(pattern.test(showTeamPosition("aaa"), false));
+            let pattern = /O time que está em \d+º lugar é o \w+/;
+            assert.equal(pattern.test(showTeamPosition(1)), true);
+            assert.equal(pattern.test(showTeamPosition("aaa")), false);
         });
 
         it("showTeamPosition retorna outra frase para times abaixo da"
