@@ -6,6 +6,7 @@ let assert = require("assert");
 // Importar funções e variáveis que vamos testar
 // Funções
 let showTeamPosition = desafio06.showTeamPosition;
+let convertToHex = desafio06.convertToHex;
 
 // Variáveis
 let championship = desafio06.championship;

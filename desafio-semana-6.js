@@ -51,11 +51,6 @@ const showTeamPosition = pos => {
     return null;
 };
 
-module.exports = {
-    championship, teams,
-    showTeamPosition,
-};
-
 /*
  Escolha 4 times do campeonato selecionado e mostre a posição dele,
  usando a função acima. Entre esses 4, adicione 1 que não esteja entre
@@ -97,4 +92,13 @@ const tabelaCores = {
     green: "#00ff00",
     black: "#000000",
     white: "#ffffff"
+};
+
+const convertToHex = nomeCor => {
+
+};
+
+module.exports = {
+    championship, teams, tabelaCores,
+    showTeamPosition, convertToHex
 };
