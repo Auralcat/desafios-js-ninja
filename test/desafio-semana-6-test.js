@@ -7,7 +7,12 @@ let assert = require("assert");
 // Funções
 
 // Variáveis
+let championship = desafio06.championship;
 
 describe("Teste desafio 06", function() {
-
+    describe("Variáveils", function() {
+        it("championship deve conter um String", function() {
+            assert.equal(typeof(championship), "string");
+        });
+    });
 });
