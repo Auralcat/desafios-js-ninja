@@ -107,6 +107,17 @@ const convertToHex = nomeCor => {
     return null;
 };
 
+/*
+ Tente mostrar o hexadecimal de 8 cores diferentes usando a função
+ criada acima.
+ */
+const listaCores = ["red", "green", "blue", "maroon",
+                    "black", "white", "aliceblue", "magenta"];
+
+for (cor in listaCores) {
+    console.log(convertToHex(listaCores[cor]));
+}
+
 module.exports = {
     championship, teams,
     showTeamPosition, convertToHex
