@@ -17,6 +17,9 @@ console.log(championship);
 const teams = ["Universo 1", "Universo 7", "Universo 12",
                "Universo 8", "Universo 6"];
 
+console.log( "Times que estão participando do campeonato:", teams);
+
 module.exports = {
-    championship, teams
+    championship, teams,
+    showTeamPosition,
 };

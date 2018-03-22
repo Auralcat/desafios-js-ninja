@@ -5,6 +5,7 @@ let assert = require("assert");
 
 // Importar funções e variáveis que vamos testar
 // Funções
+let showTeamPosition = desafio06.showTeamPosition;
 
 // Variáveis
 let championship = desafio06.championship;
@@ -20,6 +21,22 @@ describe("Teste desafio 06", function() {
             assert.equal(teams.length, 5);
             assert.equal(teams.some(x => typeof(x) != "string"), false);
         });
+    });
 
+    describe("Funções", function() {
+        it("showTeamPosition deve receber um número por parâmetro e"
+           + " retornar um String", function() {
+            // Nos testes você só consegue ver a saída das funções,
+            // não a entrada, mas...
+            assert.equal(typeof(showTeamPosition(0)), "string");
+            assert.equal(typeof(showTeamPosition("aaa"), null));
+        });
+
+        it("showTeamPosition deve retornar a frase 'O time que está em"
+           + " [POSIÇÃO]º lugar é o [NOME_DO_TIME].' ", function() {
+            let pattern = /O time que está em \d+º lugar é o \w+/;
+            assert.equal(pattern.test(showTeamPosition(0), true));
+            assert.equal(pattern.test(showTeamPosition("aaa"), false));
+        });
     });
 });
