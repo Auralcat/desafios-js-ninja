@@ -96,9 +96,5 @@ const tabelaCores = {
     blue: "#0000ff",
     green: "#00ff00",
     black: "#000000",
-    white: "#ffffff",
-    aquamarine: "#7fffd4",
-    yellow: "#ffff00",
-    magenta: "#ff00ff",
-    cyan: "#00ffff"
+    white: "#ffffff"
 };

@@ -10,6 +10,7 @@ let showTeamPosition = desafio06.showTeamPosition;
 // Variáveis
 let championship = desafio06.championship;
 let teams = desafio06.teams;
+let tabelaCores = desafio06.tabelaCores;
 
 describe("Teste desafio 06", function() {
     describe("Variáveis", function() {
@@ -50,6 +51,21 @@ describe("Teste desafio 06", function() {
             // fora dela.
             assert.equal(showTeamPosition(teams.length + 1),
                 "Não temos a informação do time que está nessa posição.");
+        });
+
+        it("convertToHex retorna null se não receber um nome de cor", function() {
+            assert.equal(convertToHex(21) === null, true);
+            assert.equal(convertToHex("red") === null, false);
+        });
+
+        it("convertToHex retorna uma frase para cores válidas", function() {
+            let phrase = /O hexadecimal para a cor \w+ é \w+/;
+            assert.equal(phrase.test(convertToHex("red")), true);
+        });
+
+        it("convertToHex retorna outra frase para cores não-válidas", function() {
+            let dud = /Não temos o equivalente hexadecimal para \w+/;
+            assert.equal(dud.test(convertToHex("dada")), true);
         });
     });
 });
