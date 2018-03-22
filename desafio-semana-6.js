@@ -96,12 +96,18 @@ const convertToHex = nomeCor => {
     };
 
     if (typeof(nomeCor) === "string") {
-
+        switch (Object.keys(tabelaCores).includes(nomeCor)) {
+        case true:
+            return `O hexadecimal para a cor ${nomeCor} `
+                + ` é ${tabelaCores[nomeCor]}.`;
+        default:
+            return `Não temos o equivalente hexadecimal para ${nomeCor}.`;
+        }
     }
     return null;
 };
 
 module.exports = {
-    championship, teams, tabelaCores,
+    championship, teams,
     showTeamPosition, convertToHex
 };
