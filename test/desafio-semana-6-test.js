@@ -11,7 +11,6 @@ let convertToHex = desafio06.convertToHex;
 // Variáveis
 let championship = desafio06.championship;
 let teams = desafio06.teams;
-let tabelaCores = desafio06.tabelaCores;
 
 describe("Teste desafio 06", function() {
     describe("Variáveis", function() {

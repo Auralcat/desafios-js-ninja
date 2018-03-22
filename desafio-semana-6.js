@@ -85,17 +85,20 @@ while (i <= 30) {
  "Não temos o equivalente hexadecimal para [COR]."
  */
 
-// Vamos precisar de uma tabela de cores:
-const tabelaCores = {
-    red: "#ff0000",
-    blue: "#0000ff",
-    green: "#00ff00",
-    black: "#000000",
-    white: "#ffffff"
-};
-
 const convertToHex = nomeCor => {
+    // Vamos precisar de uma tabela de cores:
+    const tabelaCores = {
+        red: "#ff0000",
+        blue: "#0000ff",
+        green: "#00ff00",
+        black: "#000000",
+        white: "#ffffff"
+    };
 
+    if (typeof(nomeCor) === "string") {
+
+    }
+    return null;
 };
 
 module.exports = {
