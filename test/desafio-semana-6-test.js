@@ -34,9 +34,18 @@ describe("Teste desafio 06", function() {
 
         it("showTeamPosition deve retornar a frase 'O time que está em"
            + " [POSIÇÃO]º lugar é o [NOME_DO_TIME].' ", function() {
-            let pattern = /O time que está em \d+º lugar é o \w+/;
+            let pattern = /O time que está em \d+º lugar é o \w+\./;
             assert.equal(pattern.test(showTeamPosition(0), true));
             assert.equal(pattern.test(showTeamPosition("aaa"), false));
+        });
+
+        it("showTeamPosition retorna outra frase para times abaixo da"
+           + " 5ª posição", function() {
+            // Normalmente você não pode testar parâmetros internos da
+            // função, mas nesse caso a variável envolvida está
+            // fora dela.
+            assert.equal(showTeamPosition(teams.length + 1),
+                "Não temos a informação do time que está nessa posição.");
         });
     });
 });

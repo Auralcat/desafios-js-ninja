@@ -19,6 +19,29 @@ const teams = ["Universo 1", "Universo 7", "Universo 12",
 
 console.log( "Times que estão participando do campeonato:", teams);
 
+/*
+ Crie uma função chamada showTeamPosition com as seguintes
+ características:
+ - A função deve receber um número por parâmetro;
+ - A função deve retornar a frase:
+ "O time que está em [POSIÇÃO]º lugar é o [NOME_DO_TIME].";
+ - Onde [POSIÇÃO] é o valor passado por parâmetro e [NOME_DO_TIME] é o
+ time que está nessa posição no array criado acima com os nomes dos
+ times.
+ --------------
+ Dica: lembre-se de que arrays começam no índice zero, então a posição
+ passada deve ser sempre um número a mais que o índice do array ;)
+ --------------
+ - A função só deve retornar a frase acima se o time estiver entre os
+ 5 primeiros.
+ - Se não houver time para a posisção passada, deve retornar a
+ mensagem:
+ "Não temos a informação do time que está nessa posição."
+ */
+const showTeamPosition(pos) => {
+
+};
+
 module.exports = {
     championship, teams,
     showTeamPosition,
