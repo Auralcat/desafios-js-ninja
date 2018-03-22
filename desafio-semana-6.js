@@ -99,7 +99,7 @@ const convertToHex = nomeCor => {
         switch (Object.keys(tabelaCores).includes(nomeCor)) {
         case true:
             return `O hexadecimal para a cor ${nomeCor} `
-                + ` é ${tabelaCores[nomeCor]}.`;
+                + `é ${tabelaCores[nomeCor]}.`;
         default:
             return `Não temos o equivalente hexadecimal para ${nomeCor}.`;
         }

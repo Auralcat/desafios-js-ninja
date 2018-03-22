@@ -59,12 +59,12 @@ describe("Teste desafio 06", function() {
         });
 
         it("convertToHex retorna uma frase para cores válidas", function() {
-            let phrase = /O hexadecimal para a cor \w+ é \w+/;
+            let phrase = /^O hexadecimal para a cor \w+ é #(?:[0-9a-fA-F]{3}){1,2}\.$/;
             assert.equal(phrase.test(convertToHex("red")), true);
         });
 
         it("convertToHex retorna outra frase para cores não-válidas", function() {
-            let dud = /Não temos o equivalente hexadecimal para \w+/;
+            let dud = /^Não temos o equivalente hexadecimal para \w+\.$/;
             assert.equal(dud.test(convertToHex("dada")), true);
         });
     });
