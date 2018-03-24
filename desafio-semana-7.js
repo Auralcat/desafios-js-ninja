@@ -55,11 +55,20 @@ Só vamos mudar o range:
 
 // Não quero repetir código
 const logRange = (start, stop, condition) => {
-
+    let buf = start;
+    while (buf <= stop) {
+        if (condition(buf)) {
+            console.log(buf);
+        }
+        buf++;
+    }
 };
+
 console.log( 'Números pares entre 100 e 120:' );
+logRange(100, 120, n => n % 2 == 0);
 
 console.log( 'Números ímpares entre 111 e 125:' );
+logRange(111, 125, n => n % 2 != 0);
 
 module.exports = {
     arr, blag,
