@@ -2,12 +2,14 @@
 Crie um array com 5 items (tipos variados).
 */
 // ?
+let arr = [1, "snazzy", /wild-regex/, undefined, true];
 
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
 // ?
+const addItem = (arr, item) => arr.concat(item);
 
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
