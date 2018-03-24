@@ -36,6 +36,10 @@ describe("Teste desafio 07", function() {
             let addedArr = addItem(arr, blah);
             assert.equal(addedArr.length, concatArr.length);
         });
+
+        it("addItem deve manter o array original intacto", function() {
+            assert.notEqual(arr.length, addItem(arr, "12").length);
+        });
     });
 
 });
