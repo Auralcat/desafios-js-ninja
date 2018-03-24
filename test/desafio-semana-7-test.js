@@ -9,12 +9,18 @@ let addItem = desafio07.addItem;
 
 // Variáveis
 let arr = desafio07.arr;
+let blag = desafio07.blag;
 
 describe("Teste desafio 07", function() {
     describe("Variáveis", function() {
-        it("arr deve ter 5 itens de tipos diferentes", function(){
+        it("arr deve ter 5 itens de tipos diferentes", function() {
             assert.equal(arr.length, 5);
             assert.equal(new Set(arr.map(x => typeof(x))).size, arr.length);
+        });
+
+        it("blag deve ter 3 itens de tipos diferentes", function() {
+            assert.equal(blag.length, 3);
+            assert.equal(new Set(blag.map(x => typeof(x))).size, blag.length);
         });
     });
 
@@ -28,7 +34,7 @@ describe("Teste desafio 07", function() {
             let blah = ["cupcake", "princess", "sparkly"];
             let concatArr = arr.concat(blah);
             let addedArr = addItem(arr, blah);
-            assert.equal(addedArr.length == concatArr.length);
+            assert.equal(addedArr.length, concatArr.length);
         });
     });
 

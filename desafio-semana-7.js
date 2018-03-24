@@ -62,6 +62,6 @@ console.log( 'Números ímpares entre 111 e 125:' );
 // ?
 
 module.exports = {
-    arr,
-    addItem,
+    arr, blag,
+    addItem
 };
