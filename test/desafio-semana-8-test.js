@@ -5,6 +5,9 @@ let assert = require("assert");
 
 // Importar funções e variáveis que vamos testar
 // Funções
+let calculateSum = desafio08.calculateSum;
+let calculator = desafio08.calculator;
+let showName = desafio08.showName;
 
 // Variáveis
 

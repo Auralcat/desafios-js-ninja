@@ -62,3 +62,7 @@ correto por parâmetro para cada uma delas.
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
+
+module.exports = {
+    showName, calculateSum, calculator
+};
