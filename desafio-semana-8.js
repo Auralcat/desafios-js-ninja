@@ -43,7 +43,7 @@ Usando a variável criada acima, mostre no console o nome e o retorno da funçã
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-
+console.log(`A função ${varShowName.name} retorna ${varShowName()}.`);
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -57,15 +57,37 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
-
+function calculator(n1, n2, operator) {
+    const allowedOperators = ["+", "-", "*", "/", "%"];
+    if ([n1, n2].some(x => typeof(x) != "number") ||
+        !allowedOperators.includes(operator)) {
+        return null;
+    }
+    switch (operator) {
+    case "+":
+        return n1 + n2;
+    case "-":
+        return n1 - n2;
+    case "*":
+        return n1 * n2;
+    case "/":
+        return n1 / n2;
+    case "%":
+        return n1 % n2;
+    default:
+        return null;
+    }
+}
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
+sum = calculator("+");
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
+console.log(sum(12, 14));
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
