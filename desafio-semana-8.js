@@ -57,26 +57,25 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
-function calculator(n1, n2, operator) {
-    const allowedOperators = ["+", "-", "*", "/", "%"];
-    if ([n1, n2].some(x => typeof(x) != "number") ||
-        !allowedOperators.includes(operator)) {
-        return null;
-    }
-    switch (operator) {
-    case "+":
-        return n1 + n2;
-    case "-":
-        return n1 - n2;
-    case "*":
-        return n1 * n2;
-    case "/":
-        return n1 / n2;
-    case "%":
-        return n1 % n2;
-    default:
-        return null;
-    }
+
+// A ordem dos argumentos importa quando você for fazer currying!
+function calculator(operator, n1, n2) {
+    return function(n1, n2) {
+        switch (operator) {
+        case "+":
+            return n1 + n2;
+        case "-":
+            return n1 - n2;
+        case "*":
+            return n1 * n2;
+        case "/":
+            return n1 / n2;
+        case "%":
+            return n1 % n2;
+        default:
+            return null;
+        }
+    };
 }
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
