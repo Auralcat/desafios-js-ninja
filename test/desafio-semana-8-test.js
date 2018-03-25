@@ -10,6 +10,12 @@ let calculator = desafio08.calculator;
 let showName = desafio08.showName;
 
 // Variáveis
+let sumFirst = calculateSum;
+let sumSecond = calculator("+");
+let subtraction = calculator("-");
+let multiplication = calculator("*");
+let division = calculator("/");
+let mod = calculator("%");
 
 describe("Teste desafio 08", function() {
     describe("Variáveis", function() {
