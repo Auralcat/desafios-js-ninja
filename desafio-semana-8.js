@@ -93,11 +93,18 @@ Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
+let subtraction = calculator("-");
+let multiplication = calculator("*");
+let division = calculator("/");
+let mod = calculator("%");
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
+console.log(`Subtração: ${subtraction(21, 5)};\nMultiplicação:`
+            + ` ${multiplication(13, 5)};\nDivisão: ${division(78, 3)};`
+            + `\nResto: ${mod(30,3)}`);
 
 module.exports = {
     showName, calculateSum, calculator
