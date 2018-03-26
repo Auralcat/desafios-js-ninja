@@ -60,13 +60,17 @@ const iife = function(){
     por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
     que foram passadas para a primeira função `calculator`.
     */
-    // ?
+    const calculator = (n1, n2) => {
+        return function(callback) {
+            return callback(n1, n2);
+        };
+    };
 
     /*
     Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
     passando dois números por parâmetro.
     */
-    // ?
+    let sum = calculator(10, 15);
 
     /*
     Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
@@ -77,15 +81,17 @@ const iife = function(){
     uma função anônima que irá retornar a soma dos dois números que essa função
     anônima tem como seus argumentos.
     */
-    console.log( 'O resultado da soma é:' );
-    // ?
+    console.log( 'O resultado da soma é: ' + sum((x, y) => x + y) + '.' );
 
     /*
     Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
     `division` e `mod`, e atribua à elas `calculator`, passando números
     diferentes para cada chamada.
     */
-    // ?
+    let subtraction = calculator(76, 25);
+    let multiplication = calculator(20, 54);
+    let division = calculator(32, 8);
+    let mod = calculator(54, 2);
 
     /*
     Mostre as variáveis acima no `console` (uma chamada de console por variável),
@@ -95,21 +101,15 @@ const iife = function(){
     chamada.
     */
     console.log( 'O resultado da subtração é:' );
-    // ?
+    console.log( subtraction((x, y) => x - y) );
 
     console.log( 'O resultado da multiplicação é:' );
-    // ?
+    console.log( multiplication((x, y) => x * y) );
 
     console.log( 'O resultado da divisão é:' );
-    // ?
+    console.log( division((x, y) => x / y) );
 
     console.log( 'O resto da divisão é:' );
-    // ?
+    console.log( mod((x, y) => x % y) );
 }();
 // ^ Invocação final da IIFE
-
-// Exportação do módulo
-module.exports = {
-    calculator,
-    sum
-};
