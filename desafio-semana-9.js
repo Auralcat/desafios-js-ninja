@@ -111,5 +111,13 @@ const iife = function(){
 
     console.log( 'O resto da divisão é:' );
     console.log( mod((x, y) => x % y) );
+
+    // Retorna os conteúdos da função para testes:
+    return {
+        sum, subtraction, multiplication, division, mod,
+        calculator
+    };
 }();
 // ^ Invocação final da IIFE
+
+console.log(iife);
