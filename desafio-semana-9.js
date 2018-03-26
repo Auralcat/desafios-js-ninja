@@ -1,8 +1,9 @@
-/*
-Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
-indentação correta do código, para ficar dentro da IIFE.
-*/
 const iife = function(){
+    /*
+    Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
+    indentação correta do código, para ficar dentro da IIFE.
+    */
+
     /*
     Analise as funções abaixo (`myFunction`, `myFunction2` e `myFunction3`, e
     ajuste o posicionamento das variáveis e funções internas, para que os códigos
@@ -121,3 +122,5 @@ const iife = function(){
 // ^ Invocação final da IIFE
 
 console.log(iife);
+
+module.exports = { iife };
