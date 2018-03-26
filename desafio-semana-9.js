@@ -105,8 +105,11 @@ const iife = function(){
 
     console.log( 'O resto da divisão é:' );
     // ?
-};
+}();
+// ^ Invocação final da IIFE
 
+// Exportação do módulo
 module.exports = {
-    calculator
+    calculator,
+    sum
 };
