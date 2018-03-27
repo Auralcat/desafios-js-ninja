@@ -120,6 +120,10 @@ let iife = function() {
     */
     // ?
 
+    return {
+        operation, isOperatorValid, calculator,
+        showErrorMessage, showOperationMessage
+    };
 }();
 
 module.exports = {
