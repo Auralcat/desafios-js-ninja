@@ -55,7 +55,7 @@ describe("Teste desafio 10", function() {
     });
 
     it("calculator retorna false para operadores não-válidos", function() {
-        assert.false(calculator("foo"));
+        assert.equal(calculator("foo"), false);
     });
 
     it("calculator retorna uma segunda função para operadores válidos " +
@@ -68,7 +68,7 @@ describe("Teste desafio 10", function() {
     it("Função de retorno de calculator retorna false se não receber dois" +
         " números",
         function() {
-            assert.false(calculator("+")(2, "bar"));
+            assert.equal(calculator("+")(2, "bar"), false);
         });
 
     it("Função de retorno de calculator retorna o resultado de operation " +
@@ -85,7 +85,7 @@ describe("Teste desafio 10", function() {
         "'A operação [NUMBER1] [OPERATOR] [NUMBER2] ='",
         function() {
             let pattern = /^A operação \d+ [-+*%/] \d+ \=$/;
-            assert.true(pattern.test(showOperationMessage("+", 1, 2)));
+            assert(pattern.test(showOperationMessage("+", 1, 2)));
 
         });
 
@@ -97,6 +97,6 @@ describe("Teste desafio 10", function() {
         "'Operação [OPERATOR] não é permitida!'",
         function() {
             let pattern = /^Operação [-+*%/] não é permitida!$/;
-            assert.true(pattern.test(showErrorMessage("-")));
+            assert(pattern.test(showErrorMessage("-")));
         });
 });
