@@ -118,48 +118,43 @@ let iife = function() {
     - O segundo, a função de soma, passando os dois operandos.
     - Se "sum" for "false", mostrar no console a mensagem de erro.
      */
-    number1 = 12;
-    number2 = 79;
-    console.log(showOperationMessage(operationSignal, number1, number2),
-                sum(number1, number2));
+    if (sum) {
+        number1 = 12;
+        number2 = 79;
+        console.log(showOperationMessage(operationSignal, number1, number2),
+                    sum(number1, number2));
+    } else {
+        showErrorMesssage(operationSignal);
+    }
 
     /*
     Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
     divisão e resto. Crie variáveis com os nomes "subtraction",
     "multiplication", "division" e "mod".
     */
-    operationSignal = "-";
-    let subtraction = calculator(operationSignal);
-    console.log(showOperationMessage(operationSignal, number1, number2),
-                subtraction(number1, number2));
 
-    operationSignal = "*";
-    let multiplication = calculator(operationSignal);
-    console.log(showOperationMessage(operationSignal, number1, number2),
-                multiplication(number1, number2));
+    // Muita repetição, vou fazer uma função genérica:
+    const mostrarOperacao = signal => {
+        if (calculator(signal)) {
+            number1 = Math.random(100);
+            number2 = Math.random(100);
+            console.log(showOperationMessage(signal, number1, number2),
+                        calculator(signal)(number1, number2));
+        } else {
+            showErrorMessage(signal);
+        }
+    };
 
-    operationSignal = "/";
-    let division = calculator(operationSignal);
-    console.log(showOperationMessage(operationSignal, number1, number2),
-                division(number1, number2));
+    let validOperators = ["+", "-", "*", "/", "%"];
 
-    operationSignal = "%";
-    let mod = calculator(operationSignal);
-    console.log(showOperationMessage(operationSignal, number1, number2),
-                mod(number1, number2));
-
-    /*
-    Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
-    a mensagem de erro será mostrada no console.
-    */
-    operationSignal = "dud";
-    let dud = calculator(operationSignal);
-    console.log(showOperationMessage(operationSignal, number1, number2),
-                dud);
+    for (let op in validOperators) {
+        mostrarOperacao(validOperators[op]);
+    }
 
     return {
         operation, isOperatorValid, calculator,
-        showErrorMessage, showOperationMessage
+        showErrorMessage, showOperationMessage,
+        validOperators
     };
 }();
 
