@@ -58,7 +58,7 @@ let iife = function() {
     operador passado para a função "calculator", e passando para esse método
     os dois parâmetros da função de retorno de "calculator".
     */
-    // ?
+    const calculator = op => {};
 
     /*
     Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -67,7 +67,7 @@ let iife = function() {
     'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
     Essa função mostrará a mensagem da operação que criaremos mais abaixo.
     */
-    //" ?
+    const showOperationMessage = (op, n1, n2) => {};
 
     /*
     Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
@@ -75,7 +75,7 @@ let iife = function() {
     Essa função deverá retornar a frase:
     'Operação "[OPERATOR]" não permitida!'
     */
-    // ?
+    const showErrorMessage = op => {};
 
     /*
     Nossa calculadora está pronta! Agora vamos testá-la:
