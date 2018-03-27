@@ -12,33 +12,34 @@ let isOperatorValid = iifeInternals.isOperatorValid;
 let calculator = iifeInternals.calculator;
 let showOperationMessage = iifeInternals.showOperationMessage;
 let showErrorMessage = iifeInternals.showErrorMessage;
+let validOperators = iifeInternals.validOperators;
 
 describe("Teste desafio 10", function() {
-    let opArray = ["+", "-", "*", "/", "%"];
 
     it("operation deve ter as propriedades '+', '-', '*', '/', '%'",
         function() {
-        for (let op in opArray) {
-            assert.equal(Object.keys(operation).includes(opArray[op]));
+        for (let op in validOperators) {
+            assert.equal(Object.keys(operation).includes(validOperators[op]));
         }
     });
 
     it("Propriedades de operation contém funções", function() {
-        for (let op in opArray) {
-            assert.equal(typeof(operation[opArray[op]]), "function");
+        for (let op in validOperators) {
+            assert.equal(typeof(operation[validOperators[op]]), "function");
         }
     });
 
     it("Funções dentro de operation recebem dois parâmetros", function() {
-        for (let op in opArray) {
-            assert.equal(operation[opArray[op]].length, 2);
+        for (let op in validOperators) {
+            assert.equal(operation[validOperators[op]].length, 2);
         }
     });
 
     it("Funções dentro de operation retornam o resultado da operação",
         function() {
-        for (let op in opArray) {
-            assert.equal(operation[opArray[op]](32, 8), "number");
+        for (let op in validOperators) {
+            assert.equal(typeof(operation[validOperators[op]](32, 8)),
+                         "number");
         }
     });
 
@@ -47,7 +48,7 @@ describe("Teste desafio 10", function() {
     });
 
     it("isOperatorValid retorna um booleano", function() {
-        assert.equal(typeof(isOperatorValid), "boolean");
+        assert.equal(typeof(isOperatorValid("foo")), "boolean");
     });
 
     it("calculator recebe um operador como parâmetro", function() {
