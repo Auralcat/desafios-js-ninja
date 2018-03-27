@@ -33,15 +33,15 @@ describe("Teste desafio 10", function() {
     });
 
     it("isOperatorValid recebe um operador como parâmetro", function() {
-
+        assert.equal(isOperatorValid.length, 1);
     });
 
     it("isOperatorValid retorna um booleano", function() {
-
+        assert.equal(typeof(isOperatorValid), "boolean");
     });
 
     it("calculator recebe um operador como parâmetro", function() {
-
+        assert.equal(calculator.length, 1);
     });
 
     it("calculator retorna false para operadores não-válidos", function() {
@@ -50,7 +50,8 @@ describe("Teste desafio 10", function() {
 
     it("calculator retorna uma segunda função para operadores válidos " +
        "que recebe dois parâmetros", function() {
-
+           assert.equal(typeof(calculator("+"), "function"));
+           assert.equal(calculator("+").length, 2);
     });
 
     it("Função de retorno de calculator retorna false se não receber dois" +
