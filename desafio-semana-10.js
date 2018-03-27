@@ -141,7 +141,7 @@ let iife = function() {
             console.log(showOperationMessage(signal, number1, number2),
                         calculator(signal)(number1, number2));
         } else {
-            showErrorMessage(signal);
+            console.log(showErrorMessage(signal));
         }
     };
 
@@ -150,6 +150,8 @@ let iife = function() {
     for (let op in validOperators) {
         mostrarOperacao(validOperators[op]);
     }
+
+    mostrarOperacao("dud");
 
     return {
         operation, isOperatorValid, calculator,
