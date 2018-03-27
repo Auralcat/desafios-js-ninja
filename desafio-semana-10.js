@@ -1,4 +1,4 @@
-const iife = function() {
+let iife = function() {
     /*
     Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
     e faça a indentação correta.
@@ -25,7 +25,14 @@ const iife = function() {
     função receberá dois parâmetros e retornará a operação referente à sua
     propriedade, usando os valores passados por parâmetro.
     */
-    // ?
+    let operation = {
+        "+": (x, y) => x + y,
+        "-": (x, y) => x - y,
+        "*": (x, y) => x * y,
+        "/": (x, y) => x / y,
+        "%": (x, y) => x % y
+    };
+
 
     /*
     Crie uma função chamada `isOperatorValid`, que receberá um operador por
@@ -37,7 +44,6 @@ const iife = function() {
     Caso contrário, "false".
     - O desafio é fazer o retorno sem usar "if" ou "switch".
     */
-    // ?
 
     /*
     Agora vamos criar a calculadora.
@@ -112,6 +118,7 @@ const iife = function() {
     a mensagem de erro será mostrada no console.
     */
     // ?
+
 }();
 
 module.exports = {

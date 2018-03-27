@@ -7,11 +7,11 @@ let assert = require("assert");
 // nesse caso...
 let iifeInternals = desafio10.iife;
 
-let operation = iife.operation;
-let isOperatorValid = iife.isOperatorValid;
-let calculator = iife.calculator;
-let showOperationMessage = iife.showOperationMessage;
-let showErrorMessage = iife.showErrorMessage;
+let operation = iifeInternals.operation;
+let isOperatorValid = iifeInternals.isOperatorValid;
+let calculator = iifeInternals.calculator;
+let showOperationMessage = iifeInternals.showOperationMessage;
+let showErrorMessage = iifeInternals.showErrorMessage;
 
 describe("Teste desafio 10", function() {
     let opArray = ["+", "-", "*", "/", "%"];
