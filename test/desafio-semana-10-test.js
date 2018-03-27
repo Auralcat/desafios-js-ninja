@@ -14,10 +14,15 @@ let showOperationMessage = iife.showOperationMessage;
 let showErrorMessage = iife.showErrorMessage;
 
 describe("Teste desafio 10", function() {
-    it("operation deve ter as propriedades" +
-       " '+', '-', '*', '/', '%'", function() {
+    let opArray = ["+", "-", "*", "/", "%"];
 
-    });
+    it("operation deve ter as propriedades" +
+        " '+', '-', '*', '/', '%'",
+        function() {
+            for (let op in opArray) {
+                assert.equal(Object.keys(operation).includes(opArray[op]));
+            }
+        });
 
     it("Propriedades de operation contém funções", function() {
 
@@ -28,9 +33,10 @@ describe("Teste desafio 10", function() {
     });
 
     it("Funções dentro de operation retornam " +
-       "o resultado da operação", function() {
+        "o resultado da operação",
+        function() {
 
-    });
+        });
 
     it("isOperatorValid recebe um operador como parâmetro", function() {
         assert.equal(isOperatorValid.length, 1);
@@ -49,36 +55,44 @@ describe("Teste desafio 10", function() {
     });
 
     it("calculator retorna uma segunda função para operadores válidos " +
-       "que recebe dois parâmetros", function() {
-           assert.equal(typeof(calculator("+"), "function"));
-           assert.equal(calculator("+").length, 2);
-    });
+        "que recebe dois parâmetros",
+        function() {
+            assert.equal(typeof(calculator("+"), "function"));
+            assert.equal(calculator("+").length, 2);
+        });
 
     it("Função de retorno de calculator retorna false se não receber dois" +
-       " números", function() {
+        " números",
+        function() {
 
-    });
+        });
 
     it("Função de retorno de calculator retorna o resultado de operation " +
-       " com os parâmetros passados anteriormente na sequência", function() {
+        " com os parâmetros passados anteriormente na sequência",
+        function() {
 
-    });
+        });
 
     it("showOperationMessage recebe três parâmetros", function() {
-
+        assert.equal(showOperationMessage.length, 3);
     });
 
     it("showOperationMessage retorna a frase " +
-       "'A operação [NUMBER1] [OPERATOR] [NUMBER2] ='", function() {
+        "'A operação [NUMBER1] [OPERATOR] [NUMBER2] ='",
+        function() {
+            let pattern = /^A operação \d+ [-+*%/] \d+ \=$/;
+            assert.true(pattern.test(showOperationMessage("+", 1, 2)));
 
-    });
+        });
 
     it("showErrorMessage recebe um parâmetro", function() {
-
+        assert.equal(showErrorMessage.length, 1);
     });
 
     it("showErrorMessage retorna a frase " +
-       "'Operação [OPERATOR] não é permitida!'", function() {
-
-    });
+        "'Operação [OPERATOR] não é permitida!'",
+        function() {
+            let pattern = /^Operação [-+*%/] não é permitida!$/;
+            assert.true(pattern.test(showErrorMessage("-")));
+        });
 });
