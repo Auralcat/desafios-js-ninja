@@ -60,7 +60,7 @@ const iife = function() {
     'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
     Essa função mostrará a mensagem da operação que criaremos mais abaixo.
     */
-    // ?
+    //" ?
 
     /*
     Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
@@ -113,3 +113,7 @@ const iife = function() {
     */
     // ?
 }();
+
+module.exports = {
+    iife
+};
