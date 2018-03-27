@@ -7,6 +7,12 @@ let assert = require("assert");
 // nesse caso...
 let iifeInternals = desafio10.iife;
 
+let operation = iife.operation;
+let isOperatorValid = iife.isOperatorValid;
+let calculator = iife.calculator;
+let showOperationMessage = iife.showOperationMessage;
+let showErrorMessage = iife.showErrorMessage;
+
 describe("Teste desafio 10", function() {
     it("operation deve ter as propriedades" +
        " '+', '-', '*', '/', '%'", function() {
@@ -17,20 +23,20 @@ describe("Teste desafio 10", function() {
 
     });
 
-    it("Funções dentro de operations recebem dois parâmetros", function() {
+    it("Funções dentro de operation recebem dois parâmetros", function() {
 
     });
 
-    it("Funções dentro de operations retornam " +
+    it("Funções dentro de operation retornam " +
        "o resultado da operação", function() {
 
     });
 
-    it("isOperator recebe um operador como parâmetro", function() {
+    it("isOperatorValid recebe um operador como parâmetro", function() {
 
     });
 
-    it("isOperator retorna um booleano", function() {
+    it("isOperatorValid retorna um booleano", function() {
 
     });
 
