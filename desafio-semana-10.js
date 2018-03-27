@@ -33,7 +33,6 @@ let iife = function() {
         "%": (x, y) => x % y
     };
 
-
     /*
     Crie uma função chamada `isOperatorValid`, que receberá um operador por
     parâmetro.
@@ -58,7 +57,17 @@ let iife = function() {
     operador passado para a função "calculator", e passando para esse método
     os dois parâmetros da função de retorno de "calculator".
     */
-    const calculator = op => {};
+    const calculator = op => {
+        if (Object.keys(operation).includes(op)) {
+            return function(n1, n2) {
+                if ([n1, n2].some(x => typeof(x) != "number")) {
+                    return false;
+                }
+                return operation[op](n1, n2);
+            };
+        }
+        return false;
+    };
 
     /*
     Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -67,7 +76,8 @@ let iife = function() {
     'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
     Essa função mostrará a mensagem da operação que criaremos mais abaixo.
     */
-    const showOperationMessage = (op, n1, n2) => {};
+    const showOperationMessage =
+              (op, n1, n2) => `A operação ${n1} ${op} ${n2} =`;
 
     /*
     Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
@@ -75,7 +85,7 @@ let iife = function() {
     Essa função deverá retornar a frase:
     'Operação "[OPERATOR]" não permitida!'
     */
-    const showErrorMessage = op => {};
+    const showErrorMessage = op => `Operação ${op} não permitida!`;
 
     /*
     Nossa calculadora está pronta! Agora vamos testá-la:
@@ -83,7 +93,9 @@ let iife = function() {
     - Declare 3 variáveis: "number1" e "number2", iniciando com valor zero, e
     "operationSignal", sem valor por enquanto.
     */
-    // ?
+    let number1 = 0;
+    let number2 = 0;
+    let operationSignal;
 
     /*
     PASSO 2:
@@ -91,7 +103,8 @@ let iife = function() {
     variável chamada "sum", que receba a função "calculator", passando por
     parâmetro a variável que recebeu o sinal da operação.
     */
-    // ?
+    operationSignal = "+";
+    let sum = calculator(operationSignal);
 
     /*
     PASSO 3:
@@ -104,21 +117,45 @@ let iife = function() {
     - O primeiro será a mensagem da operação (usando a função criada acima);
     - O segundo, a função de soma, passando os dois operandos.
     - Se "sum" for "false", mostrar no console a mensagem de erro.
-    */
-    // ?
+     */
+    number1 = 12;
+    number2 = 79;
+    console.log(showOperationMessage(operationSignal, number1, number2),
+                sum(number1, number2));
 
     /*
     Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
     divisão e resto. Crie variáveis com os nomes "subtraction",
     "multiplication", "division" e "mod".
     */
-    // ?
+    operationSignal = "-";
+    let subtraction = calculator(operationSignal);
+    console.log(showOperationMessage(operationSignal, number1, number2),
+                subtraction(number1, number2));
+
+    operationSignal = "*";
+    let multiplication = calculator(operationSignal);
+    console.log(showOperationMessage(operationSignal, number1, number2),
+                multiplication(number1, number2));
+
+    operationSignal = "/";
+    let division = calculator(operationSignal);
+    console.log(showOperationMessage(operationSignal, number1, number2),
+                division(number1, number2));
+
+    operationSignal = "%";
+    let mod = calculator(operationSignal);
+    console.log(showOperationMessage(operationSignal, number1, number2),
+                mod(number1, number2));
 
     /*
     Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
     a mensagem de erro será mostrada no console.
     */
-    // ?
+    operationSignal = "dud";
+    let dud = calculator(operationSignal);
+    console.log(showOperationMessage(operationSignal, number1, number2),
+                dud);
 
     return {
         operation, isOperatorValid, calculator,
