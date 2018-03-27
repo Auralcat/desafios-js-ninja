@@ -19,7 +19,7 @@ describe("Teste desafio 10", function() {
     it("operation deve ter as propriedades '+', '-', '*', '/', '%'",
         function() {
         for (let op in validOperators) {
-            assert.equal(Object.keys(operation).includes(validOperators[op]));
+            assert(Object.keys(operation).includes(validOperators[op]));
         }
     });
 
@@ -62,7 +62,7 @@ describe("Teste desafio 10", function() {
     it("calculator retorna uma segunda função para operadores válidos " +
         "que recebe dois parâmetros",
         function() {
-            assert.equal(typeof(calculator("+"), "function"));
+            assert.equal(typeof(calculator("+")), "function");
             assert.equal(calculator("+").length, 2);
         });
 
@@ -72,10 +72,10 @@ describe("Teste desafio 10", function() {
             assert.equal(calculator("+")(2, "bar"), false);
         });
 
-    it("Função de retorno de calculator retorna o resultado de operation " +
+    it("Função de retorno de calculator retorna o resultado de operation" +
         " com os parâmetros passados anteriormente na sequência",
         function() {
-            assert.equal(typeof(calculator("+")(20, 30), "number"));
+            assert.equal(typeof(calculator("+")(20, 30)), "number");
         });
 
     it("showOperationMessage recebe três parâmetros", function() {
@@ -95,9 +95,9 @@ describe("Teste desafio 10", function() {
     });
 
     it("showErrorMessage retorna a frase " +
-        "'Operação [OPERATOR] não é permitida!'",
+        "'Operação [OPERATOR] não permitida!'",
         function() {
-            let pattern = /^Operação [-+*%/] não é permitida!$/;
+            let pattern = /^Operação [-+*%/] não permitida!$/;
             assert(pattern.test(showErrorMessage("-")));
         });
 });
