@@ -16,27 +16,31 @@ let showErrorMessage = iife.showErrorMessage;
 describe("Teste desafio 10", function() {
     let opArray = ["+", "-", "*", "/", "%"];
 
-    it("operation deve ter as propriedades" +
-        " '+', '-', '*', '/', '%'",
+    it("operation deve ter as propriedades '+', '-', '*', '/', '%'",
         function() {
-            for (let op in opArray) {
-                assert.equal(Object.keys(operation).includes(opArray[op]));
-            }
-        });
+        for (let op in opArray) {
+            assert.equal(Object.keys(operation).includes(opArray[op]));
+        }
+    });
 
     it("Propriedades de operation contém funções", function() {
-
+        for (let op in opArray) {
+            assert.equal(typeof(operation[opArray[op]]), "function");
+        }
     });
 
     it("Funções dentro de operation recebem dois parâmetros", function() {
-
+        for (let op in opArray) {
+            assert.equal(operation[opArray[op]].length, 2);
+        }
     });
 
-    it("Funções dentro de operation retornam " +
-        "o resultado da operação",
+    it("Funções dentro de operation retornam o resultado da operação",
         function() {
-
-        });
+        for (let op in opArray) {
+            assert.equal(operation[opArray[op]](32, 8), "number");
+        }
+    });
 
     it("isOperatorValid recebe um operador como parâmetro", function() {
         assert.equal(isOperatorValid.length, 1);
@@ -51,7 +55,7 @@ describe("Teste desafio 10", function() {
     });
 
     it("calculator retorna false para operadores não-válidos", function() {
-
+        assert.false(calculator("foo"));
     });
 
     it("calculator retorna uma segunda função para operadores válidos " +
@@ -64,13 +68,13 @@ describe("Teste desafio 10", function() {
     it("Função de retorno de calculator retorna false se não receber dois" +
         " números",
         function() {
-
+            assert.false(calculator("+")(2, "bar"));
         });
 
     it("Função de retorno de calculator retorna o resultado de operation " +
         " com os parâmetros passados anteriormente na sequência",
         function() {
-
+            assert.equal(typeof(calculator("+")(20, 30), "number"));
         });
 
     it("showOperationMessage recebe três parâmetros", function() {
