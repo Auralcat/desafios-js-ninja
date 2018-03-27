@@ -44,6 +44,7 @@ let iife = function() {
     Caso contrário, "false".
     - O desafio é fazer o retorno sem usar "if" ou "switch".
     */
+    const isOperatorValid = op => Object.keys(operation).includes(op);
 
     /*
     Agora vamos criar a calculadora.
