@@ -47,8 +47,6 @@ const iife = function() {
     */
     console.log(books);
 
-    // Copiar book para comparar com o teste!
-    let booksTesting = books;
 
     console.log('\nLivro que está sendo removido:');
     /*

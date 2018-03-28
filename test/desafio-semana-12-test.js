@@ -19,9 +19,19 @@ describe("Teste desafio 12", function() {
         assert.equal(Object.keys(person).length, 3);
     });
 
-    it("books contém 3 objetos com duas propriedades: name e pages", function() {
-        assert.equal(books.length, 3);
-        assert.equal(books.some(x => typeof(x) != "object"), false);
-        assert.equal(books.some(x => Object.keys(x) != ["name", "pages"]), false);
+    it("books contém 2 objetos no final com duas propriedades: name e pages", function() {
+        assert.equal(books.length, 2);
+        assert(books.every(x => typeof(x) == "object"));
+
+        // Helper function
+        const hasDesiredProps = (obj, propsArray) => {
+            let out = [];
+            for (let i in propsArray) {
+                out.push(obj.hasOwnProperty(propsArray[i]));
+            }
+            return out.every(x => x);
+        };
+
+        assert(books.every(x => hasDesiredProps(x, ["name", "pages"])));
     });
 });
