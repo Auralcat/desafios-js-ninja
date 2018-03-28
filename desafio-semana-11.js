@@ -1,4 +1,4 @@
-// Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
+const iife = function() {// Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
 
 /*
 Crie uma variável chamada `once`, que recebe `false` como seu valor.
@@ -52,3 +52,8 @@ Mostrar no console os números do array.
 */
 console.log( 'Pares de 0 a 20:' );
 // ?
+}();
+
+module.exports ={
+    iife
+};
