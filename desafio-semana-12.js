@@ -11,7 +11,7 @@ const iife = function() {
     Preencha cada propriedade com os seus dados pessoais, respeitando o tipo
     de valor para cada propriedade.
     */
-    // ?
+    let person = {};
     console.log('Propriedades de "person":');
 
     /*
@@ -23,7 +23,7 @@ const iife = function() {
     /*
     Crie um array vazio chamado `books`.
     */
-    // ?
+    let books = [];
 
     /*
     Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
@@ -79,7 +79,7 @@ const iife = function() {
     Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
     seu nome. Adicione seu nome completo no array.
     */
-    // ?
+    let myName = "Miriam Retka".split('');
     console.log('\nMeu nome é:');
 
     /*
@@ -96,12 +96,12 @@ const iife = function() {
 
     console.log('\nAgora em ordem alfabética:');
     /*
-    Mostre todos os itens do array acima, odenados alfabéticamente.
+    Mostre todos os itens do array acima, odenados alfabeticamente.
     */
     // ?
 
     return {
-        person
+        person, books, myName
     };
 }();
 
