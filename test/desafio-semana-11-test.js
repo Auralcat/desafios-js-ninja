@@ -9,8 +9,8 @@ let iifeInternals = desafio11.iife;
 let person = iifeInternals.person;
 
 describe("Teste desafio 11", function() {
-    it("person tem 4 propriedades", function() {
-        assert.equal(Object.keys(person).length, 4);
+    it("person tem 4 propriedades + função moreThan", function() {
+        assert.equal(Object.keys(person).length, 5);
     });
 
     it("moreThan é uma propriedade de person", function() {

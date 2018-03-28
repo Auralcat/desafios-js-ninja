@@ -79,6 +79,10 @@ const iife = function() {
         console.log(j);
         numArr.push(j);
     }
+
+    return {
+        person
+    };
 }();
 
 module.exports = {
