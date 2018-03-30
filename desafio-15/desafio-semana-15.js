@@ -53,4 +53,10 @@ const iife = function() {
     */
     console.log('\nNova idade das pessoas:');
     // ?
+
+    return { Person };
 }();
+
+module.exports = {
+    iife
+};
