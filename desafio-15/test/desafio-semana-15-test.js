@@ -17,8 +17,8 @@ describe("Teste desafio 15", function() {
         let buf = [];
 
         // Check if every element we want is in the Person object
-        desiredProps.forEach(x => buf.push(Object.keys(dummy).includes(x)));
-        assert(buf.every(x => x === true));
+        desiredProps.forEach(x => buf.push(dummy.hasOwnProperty(x)));
+        assert(buf.every(x => x));
     });
 
     it("Person deve ter 3 métodos: getFullName, getAge e addAge", function() {
@@ -27,8 +27,8 @@ describe("Teste desafio 15", function() {
 
         // Praticamente a mesma coisa de antes, a diferença é que vamos testar
         // o tipo da propriedade também
-        desiredMethods.forEach(x => buf.push(typeof(Object.keys(dummy).find(x))));
-        assert(buf.every(x => x === "function"));
+        desiredMethods.forEach(x => buf.push(typeof(dummy[x]) == "function"));
+        assert(buf.every(x => x));
     });
 
     it("getFullName retorna [NOME] [SOBRENOME]", function() {
