@@ -26,6 +26,19 @@ const iife = function() {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
+
+        // Métodos
+        this.getFullName = function() {
+            return `${name} ${lastName}`;
+        };
+
+        this.getAge = function() {
+            return age;
+        };
+
+        this.addAge = function() {
+            age += arguments[0];
+        };
     }
     /*
     Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
@@ -34,20 +47,27 @@ const iife = function() {
     Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
     */
     console.log('Novas pessoas criadas à partir de Person:');
-    // ?
+    let p1 = new Person("Terra", "Branford", 26);
+    let p2 = new Person("Edgar", "Figaro", 31);
+    let p3 = new Person("Locke", "Cole", 28);
+
+    console.log(p1);
+    console.log(p2);
+    console.log(p3);
 
     /*
     Mostre no console o nome completo de cada pessoa.
     */
     console.log('\nNomes das pessoas:');
-    // ?
+    [p1, p2, p3].forEach(person => console.log(person.getFullName()));
 
     /*
     Mostre no console as idades de cada pessoa, com a frase:
     - "[NOME COMPLETO] tem [IDADE] anos."
     */
     console.log('\nIdade das pessoas:');
-    // ?
+    [p1, p2, p3].forEach(
+        p => console.log(`${p.getFullName()} tem ${p.getAge()} anos.`));
 
     /*
     Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -55,7 +75,11 @@ const iife = function() {
     - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
     */
     console.log('\nNova idade das pessoas:');
-    // ?
+    [p1, p2, p3].forEach(p => {
+        // Adiciona idade aleatória entre 5 e 10 anos.
+        p.addAge(Math.floor(Math.random() * (10 - 5 + 1) + 5));
+        console.log(`${p.getFullName()} agora tem ${p.getAge()} anos.`);
+    });
 
     return { Person };
 }();

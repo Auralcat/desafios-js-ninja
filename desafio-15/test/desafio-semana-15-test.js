@@ -11,12 +11,13 @@ let Person = iifeInternals.Person;
 describe("Teste desafio 15", function() {
     let dummy = new Person("Terra", "Branford", 26);
 
-    it("Person deve ter 3 propriedades: name, lastName e age", function() {
+    it("Instância de Person deve ter 3 propriedades: name, lastName e age",
+        function() {
         let desiredProps = ["name", "lastName", "age"];
         let buf = [];
 
         // Check if every element we want is in the Person object
-        desiredProps.forEach(x => buf.push(Object.keys(Person).includes(x)));
+        desiredProps.forEach(x => buf.push(Object.keys(dummy).includes(x)));
         assert(buf.every(x => x === true));
     });
 
@@ -26,13 +27,13 @@ describe("Teste desafio 15", function() {
 
         // Praticamente a mesma coisa de antes, a diferença é que vamos testar
         // o tipo da propriedade também
-        desiredMethods.forEach(x => buf.push(typeof(x) === "function"));
+        desiredMethods.forEach(x => buf.push(typeof(Object.keys(dummy).find(x))));
         assert(buf.every(x => x === "function"));
     });
 
     it("getFullName retorna [NOME] [SOBRENOME]", function() {
         let pattern = /^\w+ \w+$/;
-        assert(pattern.match(dummy.getFullName()));
+        assert(pattern.test(dummy.getFullName()));
     });
 
     it("getAge retorna um número", function() {
@@ -41,7 +42,8 @@ describe("Teste desafio 15", function() {
 
     it("addAge soma o argumento à idade de Person", function() {
         let previousAge = dummy.getAge();
-        assert.equal(dummy.addAge(5), previousAge + 5);
+        dummy.addAge(5);
+        assert.equal(dummy.getAge(), previousAge + 5);
     });
 
 });
