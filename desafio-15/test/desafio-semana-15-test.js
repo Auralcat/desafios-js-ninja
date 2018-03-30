@@ -9,6 +9,8 @@ let iifeInternals = desafio15.iife;
 let Person = iifeInternals.Person;
 
 describe("Teste desafio 15", function() {
+    let dummy = new Person("Terra", "Branford", 26);
+
     it("Person deve ter 3 propriedades: name, lastName e age", function() {
         let desiredProps = ["name", "lastName", "age"];
         let buf = [];
@@ -29,15 +31,17 @@ describe("Teste desafio 15", function() {
     });
 
     it("getFullName retorna [NOME] [SOBRENOME]", function() {
-
+        let pattern = /^\w+ \w+$/;
+        assert(pattern.match(dummy.getFullName()));
     });
 
     it("getAge retorna um número", function() {
-
+        assert.equal(typeof(dummy.getAge()), "number");
     });
 
     it("addAge soma o argumento à idade de Person", function() {
-
+        let previousAge = dummy.getAge();
+        assert.equal(dummy.addAge(5), previousAge + 5);
     });
 
 });
