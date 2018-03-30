@@ -6,6 +6,7 @@ let assert = require("assert");
 // A importação das variáveis e funções vai ser um pouco diferente
 // nesse caso...
 let iifeInternals = desafio15.iife;
+let Person = iifeInternals.Person;
 
 describe("Teste desafio 15", function() {
 

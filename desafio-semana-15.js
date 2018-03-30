@@ -22,7 +22,7 @@ const iife = function() {
       adicionados à idade original (age). Esse método deverá retornar o objeto
       que será instanciado.
     */
-    // ?
+    const Person = {};
 
     /*
     Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
