@@ -1,4 +1,4 @@
-const iife = () => {
+const iife = function() {
     /*
     Envolva todo o código desse desafio em uma IIFE.
     */
@@ -11,7 +11,11 @@ const iife = () => {
     Mostre esse array no console.
     */
     console.log('Number Objects Array:');
-    // ?
+    let numberObjects = [];
+    for (let i = 1; i <= 10; i++) {
+        numberObjects.push({ number: i });
+    }
+    console.log(numberObjects);
 
     /*
     Crie um array chamado `justNumbers`, que terá como elementos somente os
