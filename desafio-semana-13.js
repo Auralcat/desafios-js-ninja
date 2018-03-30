@@ -1,4 +1,4 @@
-/*
+const iife = function(){/*
 Envolva todo o código desse desafio em uma IIFE.
 */
 
@@ -148,3 +148,8 @@ Mostre o array filtrado acima no console.
 */
 console.log( '\nEstados com ID par:' );
 // ?
+}();
+
+module.exports = {
+    iife
+};
