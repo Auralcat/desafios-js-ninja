@@ -1,4 +1,5 @@
 const iife = function() {
+    "use strict";
     /*
     1. Envolva todo o conteúdo desse desafio em uma IIFE.
     2. Adicione a diretiva 'use strict';
@@ -16,7 +17,9 @@ const iife = function() {
     - "101.123-131x32"
     */
     console.log('Limpando CPFs:');
-    // ?
+    const cleanCPF = rawCPF => {
+
+    };
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -88,6 +91,8 @@ const iife = function() {
     */
     console.log('\nFazer replace dos textos das tags:');
     // ?
+
+    return { cleanCPF };
 }();
 
 module.exports = {
