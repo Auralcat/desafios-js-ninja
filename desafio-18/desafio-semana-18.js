@@ -15,19 +15,30 @@ const iife = function() {
     - "210.458.522-05"
     - "735 500 794 - 22"
     - "101.123-131x32"
-    */
+*/
     console.log('Limpando CPFs:');
     const cleanCPF = rawCPF => {
-
+        let buf = rawCPF;
+        let matches = rawCPF.match(/[\-\s\.A-z]/g);
+        for (let m in matches) {
+            buf = buf.replace(matches[m], '');
+        }
+        return buf;
     };
 
+    const sampleCPFs = ["049-214 3421-1", "210.458.522-05",
+                        "735 500 794 - 22", "101.123-131x32"];
+
+    sampleCPFs.forEach(x => console.log(cleanCPF(x)));
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
     Ex.: "999.999.999-99"
     Mostre o resultado no console.
     */
     console.log('\nFormatando CPFs corretamente:');
-    // ?
+    const formatarCPF = cleanNum => {
+
+    };
 
     /*
     Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
