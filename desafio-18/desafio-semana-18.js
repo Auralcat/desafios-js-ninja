@@ -15,7 +15,8 @@ const iife = function() {
     - "210.458.522-05"
     - "735 500 794 - 22"
     - "101.123-131x32"
-*/
+    */
+
     console.log('Limpando CPFs:');
     const cleanCPF = rawCPF => {
         let buf = rawCPF;
@@ -30,6 +31,7 @@ const iife = function() {
                         "735 500 794 - 22", "101.123-131x32"];
 
     sampleCPFs.forEach(x => console.log(cleanCPF(x)));
+
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
     Ex.: "999.999.999-99"
@@ -45,6 +47,7 @@ const iife = function() {
     };
 
     sampleCPFs.forEach(x => console.log(formatCPF(x)));
+
     /*
     Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
     usando o mínimo de caracteres possíveis na regex.
@@ -130,7 +133,7 @@ const iife = function() {
     console.log(target.replace(pattern, '<$1>O texto dentro da tag' +
                                ' "$1" é "$2"</$1>\n'));
 
-    return { cleanCPF };
+    return { cleanCPF, sampleCPFs };
 }();
 
 module.exports = {
