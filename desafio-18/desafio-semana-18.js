@@ -127,8 +127,8 @@ const iife = function() {
 
     // Com isso, substituímos a tag inteira -> <h1>Foo</h1> por:
     // <$1 (tag capturada)> Texto adicional $2 <texto original capturado></$1>\n
-    console.log(target.replace(pattern, '<$1>O texto dentro da tag'
-                               + ' "$1" é "$2"</$1>\n'));
+    console.log(target.replace(pattern, '<$1>O texto dentro da tag' +
+                               ' "$1" é "$2"</$1>\n'));
 
     return { cleanCPF };
 }();
