@@ -35,11 +35,16 @@ const iife = function() {
     Ex.: "999.999.999-99"
     Mostre o resultado no console.
     */
-    console.log('\nFormatando CPFs corretamente:');
-    const formatarCPF = cleanNum => {
-
+    const formatCPF = nums => {
+        nums = cleanCPF(nums);
+        let buf = [];
+        for (let i = 0; i <= 6; i += 3) {
+            buf.push(nums.substr(i, 3));
+        }
+        return buf.join('.') + '-' + nums.substr(9, 2);
     };
 
+    sampleCPFs.forEach(x => console.log(formatCPF(x)));
     /*
     Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
     usando o mínimo de caracteres possíveis na regex.
