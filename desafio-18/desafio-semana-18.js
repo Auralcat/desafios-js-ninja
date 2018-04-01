@@ -57,7 +57,8 @@ const iife = function() {
     ["junho", "julho"]
     */
     console.log('\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":');
-    // ?
+    let target = "Os meses de janeiro, junho e julho começam com a letra j.";
+    console.log(target.match(/ju[nl]ho/g));
 
     /*
     Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -69,7 +70,8 @@ const iife = function() {
     ["<div>", "<section>", "<blockquote>"]
     */
     console.log('\nMatch com a abertura de uma tag HTML:');
-    // ?
+    target = "<div><section><blockquote>Texto <img /></blockquote></section></div>";
+    console.log(target.match(/<[^>]+>?/g));
 
     /*
     Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -82,6 +84,7 @@ const iife = function() {
     */
     console.log('\nMatch com tags HTML vazias (abertura e fechamento da tag):');
     // ?
+    target = "<div><ul><li></li><li></li><li><span></span></li></ul></div>";
 
     /*
     Vamos complicar um pouco agora :D
