@@ -114,11 +114,21 @@ const iife = function() {
 
     // Nesse caso temos dois objetos envolvidos: o nome da tag
     // e o texto dentro dela.
-    // Podemos criar uma função que receba o nome da tag e o texto a
-    // ser colocado como substituição.
-    const replaceTagContent = (tagName, newText) => {
-        let pattern = /<h1>.*<\/h1>/;
-    };
+
+    // Usando regex, podemos colocar a captura da tag em um grupo e o
+    // conteúdo dela em outro!
+
+    // Vamos ao que está acontecendo aqui:
+    // <(\w+)> = primeiro grupo de captura, pega a tag
+    // ([^>]+) = segundo grupo de captura, pega todos os caracteres
+    // entre as tags exceto <
+    // <\/\w+> = tag de fechamento, não queremos capturar
+    let pattern = /<(\w+)>([^>]+)<\/\w+>/g;
+
+    // Com isso, substituímos a tag inteira -> <h1>Foo</h1> por:
+    // <$1 (tag capturada)> Texto adicional $2 <texto original capturado></$1>\n
+    console.log(target.replace(pattern, '<$1>O texto dentro da tag'
+                               + ' "$1" é "$2"</$1>\n'));
 
     return { cleanCPF };
 }();
