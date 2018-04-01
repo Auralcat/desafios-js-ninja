@@ -85,6 +85,7 @@ const iife = function() {
     console.log('\nMatch com tags HTML vazias (abertura e fechamento da tag):');
     // ?
     target = "<div><ul><li></li><li></li><li><span></span></li></ul></div>";
+    console.log(target.match(/<\w+><\/\w+>/g));
 
     /*
     Vamos complicar um pouco agora :D
