@@ -12,8 +12,6 @@ let sampleCPFs = desafio18.iife.sampleCPFs;
 describe("Teste desafio 18", function() {
 
     it("cleanCPF deve retornar apenas os números agrupados", function() {
-        let buf = [];
-        sampleCPFs.forEach(x => buf.push(/\d{11}/.test(cleanCPF(x))));
-        assert(buf.every(x => x === true));
+        assert(sampleCPFs.every(x => /\d{11}/.test(cleanCPF(x))));
     });
 });
