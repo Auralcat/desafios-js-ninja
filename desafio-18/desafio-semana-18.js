@@ -112,12 +112,12 @@ const iife = function() {
     console.log('\nFazer replace dos textos das tags:');
     target = "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>";
 
-    // Nesse caso temos dois objetos que queremos encontrar: o nome da
-    // tag e o texto dentro dela.
+    // Nesse caso temos dois objetos envolvidos: o nome da tag
+    // e o texto dentro dela.
     // Podemos criar uma função que receba o nome da tag e o texto a
     // ser colocado como substituição.
     const replaceTagContent = (tagName, newText) => {
-
+        let pattern = /<h1>.*<\/h1>/;
     };
 
     return { cleanCPF };
