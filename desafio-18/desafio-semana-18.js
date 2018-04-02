@@ -15,7 +15,8 @@ const iife = function() {
     - "210.458.522-05"
     - "735 500 794 - 22"
     - "101.123-131x32"
-*/
+    */
+
     console.log('Limpando CPFs:');
     const cleanCPF = rawCPF => {
         let buf = rawCPF;
@@ -30,6 +31,7 @@ const iife = function() {
                         "735 500 794 - 22", "101.123-131x32"];
 
     sampleCPFs.forEach(x => console.log(cleanCPF(x)));
+
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
     Ex.: "999.999.999-99"
@@ -45,6 +47,7 @@ const iife = function() {
     };
 
     sampleCPFs.forEach(x => console.log(formatCPF(x)));
+
     /*
     Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
     usando o mínimo de caracteres possíveis na regex.
@@ -114,13 +117,23 @@ const iife = function() {
 
     // Nesse caso temos dois objetos envolvidos: o nome da tag
     // e o texto dentro dela.
-    // Podemos criar uma função que receba o nome da tag e o texto a
-    // ser colocado como substituição.
-    const replaceTagContent = (tagName, newText) => {
-        let pattern = /<h1>.*<\/h1>/;
-    };
 
-    return { cleanCPF };
+    // Usando regex, podemos colocar a captura da tag em um grupo e o
+    // conteúdo dela em outro!
+
+    // Vamos ao que está acontecendo aqui:
+    // <(\w+)> = primeiro grupo de captura, pega a tag
+    // ([^>]+) = segundo grupo de captura, pega todos os caracteres
+    // entre as tags exceto <
+    // <\/\w+> = tag de fechamento, não queremos capturar
+    let pattern = /<(\w+)>([^>]+)<\/\w+>/g;
+
+    // Com isso, substituímos a tag inteira -> <h1>Foo</h1> por:
+    // <$1 (tag capturada)> Texto adicional $2 <texto original capturado></$1>\n
+    console.log(target.replace(pattern, '<$1>O texto dentro da tag' +
+                               ' "$1" é "$2"</$1>\n'));
+
+    return { cleanCPF, sampleCPFs };
 }();
 
 module.exports = {
