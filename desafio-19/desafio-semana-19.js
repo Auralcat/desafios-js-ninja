@@ -85,7 +85,7 @@ const iife = function() {
     var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
     console.log('\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n');
     const hasClass = (markup, cssClass) => {
-        let classRegex = new RegExp(`class=['"].*${cssClass}.*['"]`, "m");
+        let classRegex = new RegExp(`class=(${cssClass})?`, "m");
         return classRegex.test(markup);
     };
 
