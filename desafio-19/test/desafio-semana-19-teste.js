@@ -9,9 +9,16 @@ let iifeInternals = desafio19.iife;
 let hasClass = iifeInternals.hasClass;
 
 describe("Teste desafio 19", function() {
-    it("hasClass deve retornar um booleano", function() {
-        let markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
+    it("hasClass deve retornar true se as classes estiverem no string",
+       function() {
+        let markup = '<main>\n  <div class="container">\n' +
+            '<span class="text date"></span>\n' +
+            '<p class=\'excerpt\'></p>\n  </div>\n</main>';
         let classes = ["container", "text", "date", "\'excerpt\'"];
         assert(classes.every(x => hasClass(markup, x)));
+    });
+
+    it("hasClass retorna um booleano", function() {
+        assert.equal(typeof(hasClass("foo")), "boolean");
     });
 });
