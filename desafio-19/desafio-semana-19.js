@@ -25,7 +25,8 @@ const iife = function() {
     no console:
     */
     console.log('Regex para números usando o construtor:');
-    // ?
+    let justNumbersRegex = new RegExp( "^\\d+", "mg");
+    console.log(justNumbersRegex);
 
     /*
     Verifique se a regex acima casa com o texto na variável `text`, mostrando o
@@ -34,7 +35,7 @@ const iife = function() {
     */
     var text = '10 anos.\n50 discos vendidos.\nE nem 10% dos meus amigos o conhece.';
     console.log('\nNúmeros no início da linha do texto:\n' + text, '\n');
-    // ?
+    console.log(text.match(justNumbersRegex));
 
     /*
     - Crie uma regex que case com números no final de uma string. Atribua a
