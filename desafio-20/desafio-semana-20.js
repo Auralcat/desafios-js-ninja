@@ -24,7 +24,7 @@ const iife = function() {
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
     uma variável chamada `email`.
     */
-    // ?
+    let email = prompt("Qual o seu e-mail?");
 
     /*
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
