@@ -30,31 +30,35 @@ const iife = function() {
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
     `$inputUsername`.
     */
-    // ?
 
+    // Vou guardar os inputs em um lugar só
+    let inputList = document.getElementsByTagName("input");
+
+    let $inputUsername = inputList[0];
     /*
     - Selecione o input de "Email", atribuindo-o à uma variável chamada
     `$inputEmail`.
     */
-    // ?
+    let $inputEmail = inputList[1];
 
     /*
     - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
     `$message`.
     */
-    // ?
+    let $message = document.getElementsByTagName("textarea")[0];
 
     /*
     - Selecione o botão de envio do formulário, atribuindo-o à uma variável
     chamada `$button`.
     */
-    // ?
+    let $button = document.getElementsByTagName("button")[0];
 
     /*
     Preencha os campos de "Nome" e "Email" que estão no documento com os valores
     entrados pelo usuário.
     */
-    // ?
+    $inputUsername.value = username;
+    $inputEmail.value = email;
 
     /*
     Adicione um listener de evento de click ao botão que faça o seguinte:
@@ -80,7 +84,8 @@ const iife = function() {
     Caso contrário, mostre um alerta com a mensagem:
         - "Não enviado."
     */
-    // ?
+    let emailRegex = /\w+@\w+\.\w+/g;
+    const isValidEmail = emailAddress => emailRegex.test(emailAddress);
 
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
@@ -110,7 +115,7 @@ const iife = function() {
     */
     // ?
     return {
-        isValidEmail,
+        isValidEmail, emailRegex,
     };
 }();
 
