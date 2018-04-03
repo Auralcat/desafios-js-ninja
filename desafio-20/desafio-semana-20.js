@@ -8,6 +8,7 @@ const iife = function() {
 
     O HTML NÃO PODE ser alterado!
     */
+    "use strict";
 
     /*
     Ao carregar a página, pergunte ao usuário "Qual o seu nome?". Atribua o
