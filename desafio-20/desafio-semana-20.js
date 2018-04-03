@@ -16,7 +16,9 @@ const iife = function() {
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    // ?
+    let username = prompt("Qual o seu nome?");
+    if (username === "") username = "Desconhecido";
+    alert("Bem vindo " + username + "!");
 
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
