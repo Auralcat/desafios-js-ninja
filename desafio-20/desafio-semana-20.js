@@ -84,9 +84,15 @@ const iife = function() {
     Caso contrário, mostre um alerta com a mensagem:
         - "Não enviado."
     */
-    let emailRegex = /\w+@\w+\.\w+/g;
+    let emailRegex = /([^-][^_])*@\w+(\.\w{2,}){1,2}/g;
     const isValidEmail = emailAddress => emailRegex.test(emailAddress);
 
+    let validEmailAddresses = ["meu.email+categoria@gmail.com",
+                               "juca_malandro@bol.com.br",
+                               "pedrobala@hotmail.uy",
+                               "sandro@culinaria.dahora"];
+
+    validEmailAddresses.forEach(x => alert(isValidEmail(x)));
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
     envio do formulário.
