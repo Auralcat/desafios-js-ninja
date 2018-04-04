@@ -16,13 +16,13 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
 
 // Selecionando os elementos
-let [$timeDisplay, $startButton, $stopButton, $resetButton] =
-        [...document.querySelectorAll("*[data-js]")];
+// let [$timeDisplay, $startButton, $stopButton, $resetButton] =
+//         [...document.querySelectorAll("*[data-js]")];
 
-alert("Display" + $timeDisplay.value);
-alert("Start button" + $startButton);
-alert("Stop button" + $stopButton);
-alert("Reset button" + $resetButton);
+// alert("Display" + $timeDisplay.value);
+// alert("Start button" + $startButton);
+// alert("Stop button" + $stopButton);
+// alert("Reset button" + $resetButton);
 
 const incrementTime = display => {
 
@@ -30,13 +30,23 @@ const incrementTime = display => {
 
 const formatTimeString = rawTime => {
     // Retorna o tempo como um string no formato HH:MM:SS
-    let hours, minutes, seconds;
+    let timeUnits = [3600, 60, 1];
+    let out = [];
+    let buf = rawTime;
 
-    return [hours, minutes, seconds].join(":");
+    timeUnits.forEach(x => {
+        out.push(Math.floor(buf / x));
+        buf -= Math.floor(buf / x) * x;
+    });
+
+    // Colocar 0 antes do número se for menor que 10 no campo
+    return out.map(x => x < 10 ? x = "0" + x : x = x).join(":");
 };
 
+console.log(formatTimeString(10000));
+
 module.exports = {
-    $timeDisplay,
-    $stopButton, $startButton, $resetButton,
+    // $timeDisplay,
+    // $stopButton, $startButton, $resetButton,
     incrementTime, formatTimeString
 };
