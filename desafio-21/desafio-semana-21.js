@@ -26,6 +26,15 @@ const countTime = () => {
     }, 1000);
 };
 
+const stopTimeCount = interval => {
+    clearInterval(interval);
+};
+
+const resetTimeCount = () => {
+    // Muda o tempo do display pra 00:00:00
+    $timeDisplay.value = formatTimeString(0);
+};
+
 const formatTimeString = rawTime => {
     // Retorna o tempo como um string no formato HH:MM:SS
     let timeUnits = [3600, 60, 1].map(x => x * 1000);
