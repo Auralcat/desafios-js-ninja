@@ -19,15 +19,19 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 let [$timeDisplay, $startButton, $stopButton, $resetButton] =
         [...document.querySelectorAll("*[data-js]")];
 
-const countTime = () => {
-    // Conta o tempo quando acionada
-    setInterval(function() {
+let timerVariable;
+let currentTime = 0;
 
+const startTimeCount = () => {
+    // Conta o tempo quando acionada
+    timerVariable = setInterval(function() {
+        currentTime += 1000;
+        $timeDisplay.value = formatTimeString(currentTime);
     }, 1000);
 };
 
-const stopTimeCount = interval => {
-    clearInterval(interval);
+const stopTimeCount = () => {
+    clearInterval(timerVariable);
 };
 
 const resetTimeCount = () => {
@@ -50,14 +54,13 @@ const formatTimeString = rawTime => {
     return out.map(x => x < 10 ? x = "0" + x : x = x).join(":");
 };
 
+// Inicializar display
+$timeDisplay.value = formatTimeString(0);
 
-$timeDisplay.value = formatTimeString($timeDisplay.value);
-alert("Start button" + $startButton);
-alert("Stop button" + $stopButton);
-alert("Reset button" + $resetButton);
-
-let currentTime = 0;
-
+// Colocar listeners
+$startButton.addEventListener("click", startTimeCount);
+$stopButton.addEventListener("click", stopTimeCount);
+$resetButton.addEventListener("click", resetTimeCount);
 
 module.exports = {
     $timeDisplay,
