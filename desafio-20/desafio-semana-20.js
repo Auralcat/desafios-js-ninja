@@ -84,15 +84,18 @@ const iife = function() {
     Caso contrário, mostre um alerta com a mensagem:
         - "Não enviado."
     */
-    let emailRegex = /^([A-z\.\+])*[^_]@.*$/;
-    const isValidEmail = emailAddress => emailRegex.test(emailAddress);
-
-    let validEmailAddresses = ["meu.email+categoria@gmail.com",
-                               "juca_malandro@bol.com.br",
-                               "pedrobala@hotmail.uy",
-                               "sandro@culinaria.dahora"];
-
-    validEmailAddresses.forEach(x => alert(isValidEmail(x)));
+    $button.addEventListener("click", function() {
+        if ($inputUsername.value === '') alert("Preencha o nome de usuário!");
+        else if ($message.value == '') alert("Preencha a mensagem!");
+        else if ($inputEmail.value === '') alert("Preencha o e-mail!");
+        else if (!isValidEmail($inputEmail.value)) {
+            alert("Entre com um e-mail válido!");
+        } else if (confirm("Tem certeza que deseja enviar o formulário?")) {
+            alert("Enviado com sucesso!");
+        } else {
+            alert("Não enviado.");
+        }
+    });
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
     envio do formulário.
@@ -119,7 +122,15 @@ const iife = function() {
         - "rita-marica@titica.a.b"
         - "agua_@evida.br.com"
     */
-    // ?
+    let emailRegex = /^([A-z\.\+])*[^_]@.*$/;
+    const isValidEmail = emailAddress => emailRegex.test(emailAddress);
+
+    let validEmailAddresses = ["meu.email+categoria@gmail.com",
+                               "juca_malandro@bol.com.br",
+                               "pedrobala@hotmail.uy",
+                               "sandro@culinaria.dahora"];
+
+    validEmailAddresses.forEach(x => alert(isValidEmail(x)));
     return {
         isValidEmail, emailRegex,
     };
