@@ -32,7 +32,7 @@ describe("Teste desafio 21", function() {
 
     it("formatTimeString deve retornar um string no formato HH:MM:SS", function() {
         let pattern = /^\d{2,}:\d{2}:\d{2}$/;
-        let sampleTime = Math.floor(Math.random() * 3600);
+        let sampleTime = Math.floor(Math.random() * 3600 * 1000);
         assert(pattern.test(formatTimeString(sampleTime)));
     });
 });
