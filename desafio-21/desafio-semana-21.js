@@ -19,13 +19,6 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 let [$timeDisplay, $startButton, $stopButton, $resetButton] =
         [...document.querySelectorAll("*[data-js]")];
 
-alert("Display" + $timeDisplay.value);
-alert("Start button" + $startButton);
-alert("Stop button" + $stopButton);
-alert("Reset button" + $resetButton);
-
-let currentTime = 0;
-
 const countTime = () => {
     // Conta o tempo quando acionada
     setInterval(function() {
@@ -35,7 +28,7 @@ const countTime = () => {
 
 const formatTimeString = rawTime => {
     // Retorna o tempo como um string no formato HH:MM:SS
-    let timeUnits = [3600, 60, 1];
+    let timeUnits = [3600, 60, 1].map(x => x * 1000);
     let out = [];
     let buf = rawTime;
 
@@ -47,6 +40,15 @@ const formatTimeString = rawTime => {
     // Colocar 0 antes do número se for menor que 10 no campo
     return out.map(x => x < 10 ? x = "0" + x : x = x).join(":");
 };
+
+
+$timeDisplay.value = formatTimeString($timeDisplay.value);
+alert("Start button" + $startButton);
+alert("Stop button" + $stopButton);
+alert("Reset button" + $resetButton);
+
+let currentTime = 0;
+
 
 module.exports = {
     $timeDisplay,
