@@ -43,7 +43,7 @@ const formatTimeString = rawTime => {
     return out.map(x => x < 10 ? x = "0" + x : x = x).join(":");
 };
 
-console.log(formatTimeString(10000));
+console.log(formatTimeString(1000000));
 
 module.exports = {
     // $timeDisplay,
