@@ -84,7 +84,7 @@ const iife = function() {
     Caso contrário, mostre um alerta com a mensagem:
         - "Não enviado."
     */
-    let emailRegex = /([^-][^_])*@\w+(\.\w{2,}){1,2}/g;
+    let emailRegex = /^([A-z\.\+])*[^_]@.*$/;
     const isValidEmail = emailAddress => emailRegex.test(emailAddress);
 
     let validEmailAddresses = ["meu.email+categoria@gmail.com",
