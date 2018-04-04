@@ -125,12 +125,6 @@ const iife = function() {
     let emailRegex = /^([A-z\.\+])*[^_]@.*$/;
     const isValidEmail = emailAddress => emailRegex.test(emailAddress);
 
-    let validEmailAddresses = ["meu.email+categoria@gmail.com",
-                               "juca_malandro@bol.com.br",
-                               "pedrobala@hotmail.uy",
-                               "sandro@culinaria.dahora"];
-
-    validEmailAddresses.forEach(x => alert(isValidEmail(x)));
     return {
         isValidEmail, emailRegex,
     };
