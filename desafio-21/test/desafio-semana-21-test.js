@@ -10,8 +10,10 @@ let $stopButton = desafio21.$stopButton;
 let $resetButton = desafio21.$resetButton;
 
 // Funções
-let incrementTime = desafio21.incrementTime;
 let formatTimeString = desafio21.formatTimeString;
+let startTimeCount = desafio21.startTimeCount;
+let stopTimeCount = desafio21.stopTimeCount;
+let resetTimeCount = desafio21.resetTimeCount;
 
 describe("Teste desafio 21", function() {
     it("Botão 'Start' deve iniciar o cronômetro", function() {

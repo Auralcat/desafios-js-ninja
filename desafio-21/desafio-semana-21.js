@@ -66,6 +66,5 @@ $resetButton.addEventListener("click", resetTimeCount);
 module.exports = {
     $timeDisplay,
     $stopButton, $startButton, $resetButton,
-    incrementTime,
-    formatTimeString
+    formatTimeString, startTimeCount, stopTimeCount, resetTimeCount
 };
