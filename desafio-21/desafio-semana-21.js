@@ -28,6 +28,13 @@ const incrementTime = display => {
 
 };
 
+const formatTimeString = rawTime => {
+    // Retorna o tempo como um string no formato HH:MM:SS
+    let hours, minutes, seconds;
+
+    return [hours, minutes, seconds].join(":");
+};
+
 module.exports = {
     $timeDisplay,
     $stopButton, $startButton, $resetButton,
