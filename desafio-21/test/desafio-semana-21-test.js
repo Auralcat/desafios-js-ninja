@@ -3,6 +3,12 @@ let desafio21 = require('../desafio-semana-21.js');
 // Usando o assert do Node.js
 let assert = require("assert");
 
+// Variáveis
+let $timeDisplay = desafio21.$timeDisplay;
+let $startButton = desafio21.$startButton;
+let $stopButton = desafio21.$stopButton;
+let $resetButton = desafio21.$resetButton;
+
 describe("Teste desafio 21", function() {
     it("Botão 'Start' deve iniciar o cronômetro", function() {
 
