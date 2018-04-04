@@ -36,7 +36,8 @@ const stopTimeCount = () => {
 
 const resetTimeCount = () => {
     // Muda o tempo do display pra 00:00:00
-    $timeDisplay.value = formatTimeString(0);
+    currentTime = 0;
+    $timeDisplay.value = formatTimeString(currentTime);
 };
 
 const formatTimeString = rawTime => {
