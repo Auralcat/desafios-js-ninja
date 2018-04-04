@@ -4,5 +4,15 @@ let desafio21 = require('../desafio-semana-21.js');
 let assert = require("assert");
 
 describe("Teste desafio 21", function() {
+    it("Botão 'Start' deve iniciar o cronômetro", function() {
 
+    });
+
+    it("Botão 'Stop' deve parar o cronômetro e manter o tempo", function() {
+
+    });
+
+    it("Botão 'Reset' deve retornar o valor do cronômetro pra 0", function() {
+
+    });
 });
