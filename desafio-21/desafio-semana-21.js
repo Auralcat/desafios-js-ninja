@@ -16,12 +16,15 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
 
 // Selecionando os elementos
-let $timeDisplay = document.getElementByTagName("input")[0];
-let $startButton = document.getElementByTagName("button")[0];
-let $stopButton = document.getElementByTagName("button")[1];
-let $resetButton = document.getElementByTagName("button")[2];
+let [$timeDisplay, $startButton, $stopButton, $resetButton] =
+        [...document.querySelectorAll("*[data-js]")];
 
-const incrementTime = () => {
+alert("Display" + $timeDisplay.value);
+alert("Start button" + $startButton);
+alert("Stop button" + $stopButton);
+alert("Reset button" + $resetButton);
+
+const incrementTime = display => {
 
 };
 
