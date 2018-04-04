@@ -21,7 +21,12 @@ let $startButton = document.getElementByTagName("button")[0];
 let $stopButton = document.getElementByTagName("button")[1];
 let $resetButton = document.getElementByTagName("button")[2];
 
+const incrementTime = () => {
+
+};
+
 module.exports = {
     $timeDisplay,
-    $stopButton, $startButton, $resetButton
+    $stopButton, $startButton, $resetButton,
+    incrementTime
 };

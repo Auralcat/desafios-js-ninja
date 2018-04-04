@@ -9,6 +9,9 @@ let $startButton = desafio21.$startButton;
 let $stopButton = desafio21.$stopButton;
 let $resetButton = desafio21.$resetButton;
 
+// Funções
+let incrementTime = desafio21.incrementTime;
+
 describe("Teste desafio 21", function() {
     it("Botão 'Start' deve iniciar o cronômetro", function() {
 
@@ -19,6 +22,10 @@ describe("Teste desafio 21", function() {
     });
 
     it("Botão 'Reset' deve retornar o valor do cronômetro pra 0", function() {
+
+    });
+
+    it("incrementTime deve adicionar 1 segundo ao tempo a cada segundo", function() {
 
     });
 });
