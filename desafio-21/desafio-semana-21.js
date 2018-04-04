@@ -38,5 +38,5 @@ const formatTimeString = rawTime => {
 module.exports = {
     $timeDisplay,
     $stopButton, $startButton, $resetButton,
-    incrementTime
+    incrementTime, formatTimeString
 };
