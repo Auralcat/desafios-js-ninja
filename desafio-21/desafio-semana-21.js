@@ -16,16 +16,21 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
 
 // Selecionando os elementos
-// let [$timeDisplay, $startButton, $stopButton, $resetButton] =
-//         [...document.querySelectorAll("*[data-js]")];
+let [$timeDisplay, $startButton, $stopButton, $resetButton] =
+        [...document.querySelectorAll("*[data-js]")];
 
-// alert("Display" + $timeDisplay.value);
-// alert("Start button" + $startButton);
-// alert("Stop button" + $stopButton);
-// alert("Reset button" + $resetButton);
+alert("Display" + $timeDisplay.value);
+alert("Start button" + $startButton);
+alert("Stop button" + $stopButton);
+alert("Reset button" + $resetButton);
 
-const incrementTime = display => {
+let currentTime = 0;
 
+const countTime = () => {
+    // Conta o tempo quando acionada
+    setInterval(function() {
+
+    }, 1000);
 };
 
 const formatTimeString = rawTime => {
@@ -43,10 +48,9 @@ const formatTimeString = rawTime => {
     return out.map(x => x < 10 ? x = "0" + x : x = x).join(":");
 };
 
-console.log(formatTimeString(1000000));
-
 module.exports = {
-    // $timeDisplay,
-    // $stopButton, $startButton, $resetButton,
-    incrementTime, formatTimeString
+    $timeDisplay,
+    $stopButton, $startButton, $resetButton,
+    incrementTime,
+    formatTimeString
 };
