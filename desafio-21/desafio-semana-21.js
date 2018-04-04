@@ -14,4 +14,14 @@ Utilize o atributo data-js para nomear o campo e os botões. Você pode
 usar o nome que achar melhor, desde que ele seja semântico, ou seja, o nome
 dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
-// ?
+
+// Selecionando os elementos
+let $timeDisplay = document.getElementByTagName("input")[0];
+let $startButton = document.getElementByTagName("button")[0];
+let $stopButton = document.getElementByTagName("button")[1];
+let $resetButton = document.getElementByTagName("button")[2];
+
+module.exports = {
+    $timeDisplay,
+    $stopButton, $startButton, $resetButton
+};
