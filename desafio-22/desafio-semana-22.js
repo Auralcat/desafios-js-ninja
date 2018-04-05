@@ -1,3 +1,11 @@
+// Como estou no Node.js, preciso criar uma função pra ler entrada do usuário
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
 /*
 Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
 `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
@@ -46,13 +54,20 @@ Declare uma variável chamada `userEntry`, que irá receber alguns valores
 entrados pelo usuário. Mostre para o usuário a seguinte frase:
 "Entre com alguns números que serão somados:"
 */
-// ?
+let userEntry;
+const getUserEntry = () => {
+    rl.question("Entre com alguns números que serão somados:", answer => {
+        return answer;
+    });
+};
+
+getUserEntry();
 
 /*
 Mostre no console o valor entrado pelo usuário:
 */
 console.log('\nEntrada do usuário:');
-// ?
+console.log(userEntry);
 
 /*
 Crie uma função chamada `justNumbers`, que recebe por parâmetro uma string
@@ -75,7 +90,7 @@ Agora com o array de números, utilize a função `sum` para somar todos os
 números desse array e mostre o resultado no console.
 */
 console.log('\nSomar números entrados pelo usuário:');
-// ?
+console.log(sum(...justNumbers(sample)));
 
 module.exports = {
     justNumbers, getFullName, sum
