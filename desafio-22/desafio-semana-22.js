@@ -37,7 +37,9 @@ Mostre no console que a função acima funciona, invocando-a em 3 console.log
 diferentes, com quantidades variáveis de parâmetros passados.
 */
 console.log('\nSomar alguns números:');
-// ?
+console.log(sum(12, 14, 5, 12));
+console.log(sum(1, 2, 3, 4, 5));
+console.log(sum(2, 2));
 
 /*
 Declare uma variável chamada `userEntry`, que irá receber alguns valores
