@@ -68,8 +68,8 @@ e remove tudo o que não for número, retornando um array somente com os número
 da string. Mostre a representação em string dessa função no console.
 */
 console.log('\nFunção que limpa entrada do usuário (somente números):');
-const justNumbers = rawString => rawString.match(/\d/g).map(x => Number(x));
-console.log(JSON.stringify(justNumbers));
+let justNumbers = rawString => rawString.match(/\d+/g).map(x => Number(x));
+console.log(String(justNumbers));
 
 /*
 Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
