@@ -56,16 +56,15 @@ e remove tudo o que não for número, retornando um array somente com os número
 da string. Mostre a representação em string dessa função no console.
 */
 console.log('\nFunção que limpa entrada do usuário (somente números):');
-const justNumbers = rawString => {
-
-};
+const justNumbers = rawString => rawString.match(/\d/g).map(x => Number(x));
 
 /*
 Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
 atribuindo o resultado à uma variável `numbers`.
 */
 console.log('\nEntrada do usuário limpa. Somente números:');
-// ?
+let sample = "1235456789afdcbe";
+console.log(justNumbers(sample));
 
 /*
 Agora com o array de números, utilize a função `sum` para somar todos os

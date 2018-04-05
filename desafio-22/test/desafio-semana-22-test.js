@@ -28,7 +28,7 @@ describe("Teste desafio 22", function() {
 
     it("justNumbers deve retornar um array apenas com números", function() {
         let testArray = justNumbers("123456789abcdef");
-        assert(justNumbers(testArray).every(
+        assert(testArray.every(
             x => typeof(Number(x)) === "number"));
     });
 });
