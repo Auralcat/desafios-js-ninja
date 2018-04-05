@@ -16,7 +16,9 @@ pessoas que foram criadas anteriormente, passando as pessoas acima como
 contexto da função. Use um console.log por pessoa.
 */
 console.log('O nome das pessoas é:');
-// ?
+const getFullName = () => {
+
+};
 
 /*
 Crie uma função chamada `sum`. Essa função pode receber uma lista de
@@ -25,7 +27,9 @@ Não use estruturas de repetição para somar os argumentos.
 Na primeira linha, dentro da função, deixe um console.log para mostrar todos
 os parâmetros passados para essa função.
 */
-// ?
+const sum = args => {
+
+};
 
 /*
 Mostre no console que a função acima funciona, invocando-a em 3 console.log
@@ -53,7 +57,9 @@ e remove tudo o que não for número, retornando um array somente com os número
 da string. Mostre a representação em string dessa função no console.
 */
 console.log('\nFunção que limpa entrada do usuário (somente números):');
-// ?
+const justNumbers = rawString => {
+
+};
 
 /*
 Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
