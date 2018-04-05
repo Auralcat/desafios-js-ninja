@@ -68,3 +68,7 @@ números desse array e mostre o resultado no console.
 */
 console.log('\nSomar números entrados pelo usuário:');
 // ?
+
+module.exports = {
+    justNumbers, getFullName, sum
+};
