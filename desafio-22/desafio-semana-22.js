@@ -54,7 +54,7 @@ Declare uma variável chamada `userEntry`, que irá receber alguns valores
 entrados pelo usuário. Mostre para o usuário a seguinte frase:
 "Entre com alguns números que serão somados:"
 */
-let userEntry = "1 2 3 4 5 6";
+let userEntry = prompt("Entre com alguns números que serão somados");
 
 /*
 Mostre no console o valor entrado pelo usuário:
