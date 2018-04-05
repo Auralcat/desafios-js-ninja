@@ -53,7 +53,9 @@ console.log(sum(2, 2));
 Declare uma variável chamada `userEntry`, que irá receber alguns valores
 entrados pelo usuário. Mostre para o usuário a seguinte frase:
 "Entre com alguns números que serão somados:"
-*/
+ */
+// Para testar no Mocha:
+//let userEntry = "1 2 12 14";
 let userEntry = prompt("Entre com alguns números que serão somados");
 
 /*
