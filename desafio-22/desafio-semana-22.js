@@ -1,17 +1,15 @@
-// Como estou no Node.js, preciso criar uma função pra ler entrada do usuário
-const readline = require('readline');
-
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
 /*
 Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
 `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
 */
-let person1 = { name: "Caroline", lastName: "Snyder" };
-let person2 = { name: "Isabelle", lastName: "Hickman" };
+let person1 = {
+    name: "Caroline",
+    lastName: "Snyder"
+};
+let person2 = {
+    name: "Isabelle",
+    lastName: "Hickman"
+};
 
 /*
 Agora crie uma função chamada `getFullName` que retorne as propriedades
@@ -25,7 +23,9 @@ pessoas que foram criadas anteriormente, passando as pessoas acima como
 contexto da função. Use um console.log por pessoa.
 */
 console.log('O nome das pessoas é:');
-const getFullName = function() { return `${this.name} ${this.lastName}`; };
+const getFullName = function() {
+    return `${this.name} ${this.lastName}`;
+};
 [person1, person2].forEach(x => console.log(getFullName.call(x)));
 
 /*
@@ -54,14 +54,7 @@ Declare uma variável chamada `userEntry`, que irá receber alguns valores
 entrados pelo usuário. Mostre para o usuário a seguinte frase:
 "Entre com alguns números que serão somados:"
 */
-let userEntry;
-const getUserEntry = () => {
-    rl.question("Entre com alguns números que serão somados:", answer => {
-        return answer;
-    });
-};
-
-getUserEntry();
+let userEntry = "1 2 3 4 5 6";
 
 /*
 Mostre no console o valor entrado pelo usuário:
@@ -76,22 +69,24 @@ da string. Mostre a representação em string dessa função no console.
 */
 console.log('\nFunção que limpa entrada do usuário (somente números):');
 const justNumbers = rawString => rawString.match(/\d/g).map(x => Number(x));
+console.log(JSON.stringify(justNumbers));
 
 /*
 Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
 atribuindo o resultado à uma variável `numbers`.
 */
 console.log('\nEntrada do usuário limpa. Somente números:');
-let sample = "1235456789afdcbe";
-console.log(justNumbers(sample));
+console.log(justNumbers(userEntry));
 
 /*
 Agora com o array de números, utilize a função `sum` para somar todos os
 números desse array e mostre o resultado no console.
 */
 console.log('\nSomar números entrados pelo usuário:');
-console.log(sum(...justNumbers(sample)));
+console.log(sum(...justNumbers(userEntry)));
 
 module.exports = {
-    justNumbers, getFullName, sum
+    getFullName,
+    sum,
+    justNumbers
 };
