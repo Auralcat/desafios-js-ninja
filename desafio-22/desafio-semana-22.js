@@ -16,9 +16,7 @@ pessoas que foram criadas anteriormente, passando as pessoas acima como
 contexto da função. Use um console.log por pessoa.
 */
 console.log('O nome das pessoas é:');
-const getFullName = () => {
-
-};
+const getFullName = () => `${this.name} ${this.lastName}`;
 
 /*
 Crie uma função chamada `sum`. Essa função pode receber uma lista de
@@ -27,8 +25,9 @@ Não use estruturas de repetição para somar os argumentos.
 Na primeira linha, dentro da função, deixe um console.log para mostrar todos
 os parâmetros passados para essa função.
 */
-const sum = args => {
-
+const sum = function() {
+    let argArray = Array.from(arguments);
+    return argArray.reduce((x, y) => x + y);
 };
 
 /*
