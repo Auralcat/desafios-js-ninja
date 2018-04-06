@@ -43,3 +43,8 @@ let rawOperatorSelectors =
 
 let [ $opPlus, $opMinus, $opMultiply, $opDivide, $opResult ] =
         [...rawOperatorSelectors];
+
+// Visor, CE
+let [ $visor, $funcCE ] = [..."visor", "func-ce" ].map(f => {
+    return document.getElementById(n);
+});
