@@ -48,3 +48,10 @@ let [ $opPlus, $opMinus, $opMultiply, $opDivide, $opResult ] =
 let [ $visor, $funcCE ] = [..."visor", "func-ce" ].map(f => {
     return document.getElementById(n);
 });
+
+module.exports = {
+    $digit0, $digit1, $digit2, $digit3, $digit4, $digit5,
+    $digit6, $digit7, $digit8, $digit9,
+    $opPlus, $opMinus, $opMultiply, $opDivide, $opResult,
+    $visor, $funcCE
+};
