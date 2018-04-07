@@ -29,10 +29,6 @@ describe("Teste desafio 23", function() {
         });
     });
 
-    it("Botão = deve mostrar o resultado da operação", function() {
-
-    });
-
     it("Botões de operação devem acrescentar a mesma no visor", function() {
         let operations = [ "+", "-", "x", "÷" ];
         operations.forEach(op => {
@@ -41,5 +37,13 @@ describe("Teste desafio 23", function() {
             $visor.value = 0;
         });
     });
+
+    it("Botão = deve mostrar o resultado da operação", function() {
+        let sampleCalculation = "1+2*3"; // This should eval to 7
+        calculate();
+        showCalculationResult();
+        assert.equal($visor.value, calculate());
+    });
+
 
 });

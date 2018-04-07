@@ -65,3 +65,5 @@ const addOperationToVisor = op => {
 const executeCE = () => {
     $visor.value = "0";
 };
+
+const ca
