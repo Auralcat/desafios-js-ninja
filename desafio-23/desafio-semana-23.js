@@ -58,6 +58,10 @@ const addDigitToVisor = num => {
     $visor.value = $visor.value + String(num);
 };
 
+const addOperationToVisor = op => {
+    $visor.value = $visor.value + String(op);
+}
+
 const executeCE = () => {
     $visor.value = "0";
 };

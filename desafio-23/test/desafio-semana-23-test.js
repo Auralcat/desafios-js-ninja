@@ -4,6 +4,9 @@
 let assert = chai.assert;
 
 describe("Teste desafio 23", function() {
+    // Inicializar constantes de teste
+    let originalState = 0;
+
     it("$digit0 contém um objeto", function() {
         assert.isOk($digit0 != null);
     });
@@ -19,7 +22,6 @@ describe("Teste desafio 23", function() {
 
     it("Botões de dígitos devem colocar o número no visor", function() {
         // Pra testar isso, avalie a FUNÇÃO associada ao listener do evento
-        let originalState = $visor.value;
         digits.forEach(n => {
             addDigitToVisor(n);
             assert.equal($visor.value, originalState + n);
@@ -33,7 +35,6 @@ describe("Teste desafio 23", function() {
 
     it("Botões de operação devem acrescentar a mesma no visor", function() {
         let operations = [ "+", "-", "x", "÷" ];
-        let originalState = $visor.value;
         operations.forEach(op => {
             addOperationToVisor(op);
             assert.equal($visor.value, originalState + op);
