@@ -2,10 +2,13 @@ let testString = "25-158-19x90";
 
 // Passar as regex uma operação por vez
 let out = [];
+let operatorRegexString = "[\\+\\-x\\÷]";
+console.log(new RegExp(operatorRegexString, 'g'));
 
 const getOperators = mainString => {
    // Retorna um array com as operações em ordem
-    console.log(mainString.match(/[\+\-\x\÷]/g));
+    let globalOperatorRegex = new RegExp(operatorRegexString, 'g');
+    console.log(mainString.match(globalOperatorRegex));
     return Array.from(new Set(mainString.match(/[\+\-\x\÷]/g)));
 };
 
@@ -35,6 +38,21 @@ const pickOperation = (matchesArray) => {
 let computeThis = pickOperation(out);
 console.log(computeThis);
 
-const calculate = opString => {
+const compute = opString => {
     // Retorna o resultado da operação
+    let signal = opString.match(new RegExp(operatorRegexString)).pop();
+    switch (signal) {
+    case '+':
+        return opString.split(signal).reduce((x, y) => x + y);
+    case '-':
+        return opString.split(signal).reduce((x, y) => x - y);
+    case 'x':
+        return opString.split(signal).reduce((x, y) => x * y);
+    case '÷':
+        return opString.split(signal).reduce((x, y) => x / y);
+    default:
+        return null;
+    }
 };
+
+console.log(compute(computeThis));
