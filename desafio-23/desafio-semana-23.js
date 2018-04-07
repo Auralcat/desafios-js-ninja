@@ -24,10 +24,10 @@ input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
 
-// Selecionar elementos
 // Constante de testes
 let digits = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ];
 
+// Selecionar elementos
 // Primeiro vou fazer um array de objetos do DOM
 let rawDigitSelectors = digits.map(n => {
     return document.getElementById("digit-" + n);

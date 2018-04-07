@@ -27,4 +27,18 @@ describe("Teste desafio 23", function() {
         });
     });
 
+    it("Botão = deve mostrar o resultado da operação", function() {
+
+    });
+
+    it("Botões de operação devem acrescentar a mesma no visor", function() {
+        let operations = [ "+", "-", "x", "÷" ];
+        let originalState = $visor.value;
+        operations.forEach(op => {
+            addOperationToVisor(op);
+            assert.equal($visor.value, originalState + op);
+            $visor.value = 0;
+        });
+    });
+
 });
