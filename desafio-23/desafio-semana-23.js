@@ -47,7 +47,7 @@ let [ $opPlus, $opMinus, $opMultiply, $opDivide, $opResult ] =
         [...rawOperatorSelectors];
 
 // Visor, CE
-let rawMiscSelectors = [ "visor", "func-ce" ].map(f => {
+let rawMiscSelectors = [ "visor", "ce" ].map(f => {
     return document.getElementById(f);
 });
 
@@ -58,8 +58,8 @@ const addDigitToVisor = num => {
     $visor.value = $visor.value + String(num);
 };
 
-const addOperationToVisor = op => {
-    $visor.value = $visor.value + String(op);
+const addOperationToVisor = () => {
+    $visor.value = $visor.value + this.innerHTML;
 }
 
 const executeCE = () => {
@@ -153,4 +153,15 @@ const calculate = opString => {
     return calculateStep(opString);
 };
 
-console.log(calculate("1-2-3-4-5"));
+const showCalculationResult = () => {
+
+};
+
+// Adicionando os listeners aos elementos selecionados
+$funcCE.addEventListener('click', executeCE);
+$opResult.addEventListener('click', showCalculationResult);
+
+// Operações
+[ $opPlus, $opMinus, $opMultiply, $opDivide, $opResult ].forEach(op => {
+    op.addEventListener('click', addOperationToVisor);
+});
