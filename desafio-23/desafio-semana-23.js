@@ -66,4 +66,49 @@ const executeCE = () => {
     $visor.value = "0";
 };
 
-const ca
+const compute = op => {
+    // Retorna o resultado da operação.
+};
+
+const calculate = () => {
+    // Executa as operações dentro do visor na ordem:
+    // - Multiplicação e divisão
+    // - Adição e subtração
+    // Também segue as operações da esquerda pra direita.
+    let opPattern = /\d+[\+-x÷]\d+/g;
+    let replacePat = /[\+-x÷]/;
+
+    const calculateStep = buf => {
+        // Primeiro busque as operações dentro do string
+        let matchedOperations = buf.match(opPattern);
+
+        // Caso de saída
+        if (matchedOperations.length == 0) return buf;
+
+        // Pegue a função com maior prioridade
+        let computeThis = matchedOperations.filter(
+            op => op.includes('x') || op.includes('÷'));
+
+        // Calcule o resultado desta operação
+        let opResult = compute(computeThis);
+
+        // Coloque o resultado da operação no lugar da operação bruta em
+        // matchedOperations
+        matchedOperations.splice(matchedOperations.indexOf(computeThis), 1, opResult);
+
+        // Junte tudo em uma nova variável
+        let newStepString = matchedOperations.join('');
+
+        // Retire os operandos antigos
+        computeThis.replace(replacePat, '|').split('|').forEach(n => {
+            newStepString = matchedOperations.replace(n, '');
+        });
+
+        // Repita o processo
+        calculateStep(newStepString);
+    };
+
+    return calculateStep($visor.value);
+};
+
+console.log(calculate("36+41x96÷32"));
