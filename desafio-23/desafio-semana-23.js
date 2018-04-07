@@ -66,49 +66,91 @@ const executeCE = () => {
     $visor.value = "0";
 };
 
-const compute = op => {
-    // Retorna o resultado da operação.
+// Funções relacionadas ao processamento do string do visor
+let opRegex = "[\\+\\-x\\÷]";
+
+const getSigns = mainString => {
+    // Retorna um array com os sinais das operações em ordem
+    return Array.from(new Set(mainString.match(/[\+\-\x\÷]/g)));
 };
 
-const calculate = () => {
+const extractOperations = (signArray, opString) => {
+    // Retorna um array com as ocorrências de operações dentro do string
+    let out = [];
+
+    signArray.forEach(s => {
+        let pattern = new RegExp("\\d+[" + s + "]\\d+", 'g');
+        let matches = opString.match(pattern);
+        if (matches != null ) out = out.concat(matches);
+    });
+
+    return out;
+};
+
+const pickOperation = (matchesArray) => {
+    // Retorna o string com a operação com maior prioridade
+    const hasFirstPriorityOps = str => str.includes("x") || str.includes("÷");
+    const hasSecPriorityOps = str => str.includes("+") || str.includes("-");
+
+    if (matchesArray.some(x => hasFirstPriorityOps(x))) {
+        return matchesArray.filter(x => hasFirstPriorityOps(x)).shift();
+    } else if (matchesArray.some(x => hasSecPriorityOps(x))) {
+        return matchesArray.filter(x => hasSecPriorityOps(x)).shift();
+    }
+    return null;
+};
+
+const compute = opString => {
+    // Retorna o resultado da operação
+    let signal = opString.match(new RegExp(opRegex)).pop();
+    switch (signal) {
+    case '+':
+        return opString.split(signal).reduce((x, y) => Number(x) + Number(y));
+    case '-':
+        return opString.split(signal).reduce((x, y) => x - y);
+    case 'x':
+        return opString.split(signal).reduce((x, y) => x * y);
+    case '÷':
+        return opString.split(signal).reduce((x, y) => x / y);
+    default:
+        return null;
+    }
+};
+
+const calculate = opString => {
     // Executa as operações dentro do visor na ordem:
     // - Multiplicação e divisão
     // - Adição e subtração
     // Também segue as operações da esquerda pra direita.
-    let opPattern = /\d+[\+-x÷]\d+/g;
-    let replacePat = /[\+-x÷]/;
 
     const calculateStep = buf => {
         // Primeiro busque as operações dentro do string
-        let matchedOperations = buf.match(opPattern);
+        let matchedSigns = getSigns(buf);
 
-        // Caso de saída
-        if (matchedOperations.length == 0) return buf;
+        // Caso de saída (se não achar nenhum operador)
+        if (matchedSigns.length == 0) return buf;
+
+        // Se o primeiro número do string for negativo, retorne "E"
+        if (buf.startsWith('-')) return "Error!";
+
+        // Extraia as operações
+        let opMatches = extractOperations(matchedSigns, buf);
 
         // Pegue a função com maior prioridade
-        let computeThis = matchedOperations.filter(
-            op => op.includes('x') || op.includes('÷'));
+        let calculateThis = pickOperation(opMatches);
 
         // Calcule o resultado desta operação
-        let opResult = compute(computeThis);
+        let opResult = compute(calculateThis);
 
         // Coloque o resultado da operação no lugar da operação bruta em
-        // matchedOperations
-        matchedOperations.splice(matchedOperations.indexOf(computeThis), 1, opResult);
-
-        // Junte tudo em uma nova variável
-        let newStepString = matchedOperations.join('');
-
-        // Retire os operandos antigos
-        computeThis.replace(replacePat, '|').split('|').forEach(n => {
-            newStepString = matchedOperations.replace(n, '');
-        });
+        // uma nova variável
+        let newStepString = buf.replace(calculateThis, opResult);
 
         // Repita o processo
-        calculateStep(newStepString);
+        return calculateStep(newStepString);
     };
 
-    return calculateStep($visor.value);
+    return calculateStep(opString);
 };
 
-console.log(calculate("36+41x96÷32"));
+console.log(calculate("1-2-3-4-5"));
