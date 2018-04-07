@@ -158,7 +158,9 @@ const showCalculationResult = () => {
 $funcCE.addEventListener('click', executeCE);
 $opResult.addEventListener('click', showCalculationResult);
 
-// Operações
-[ $opPlus, $opMinus, $opMultiply, $opDivide, $opResult ].forEach(op => {
+// Todos os botões de caracteres (operações e dígitos)
+[ $opPlus, $opMinus, $opMultiply, $opDivide,
+  $digit0, $digit1, $digit2, $digit3, $digit4, $digit5,
+  $digit6, $digit7, $digit8, $digit9].forEach(op => {
     op.addEventListener('click', addCharToVisor);
 });
