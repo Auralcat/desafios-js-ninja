@@ -55,3 +55,7 @@ let [ $visor, $funcCE ] = [...rawMiscSelectors];
 const addDigitToVisor = num => {
     $visor.value = $visor.value + String(num);
 };
+
+const executeCE = () => {
+    $visor.value = "0";
+};
