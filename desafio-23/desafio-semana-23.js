@@ -57,10 +57,11 @@ let [ $visor, $funcCE ] = [...rawMiscSelectors];
 
 const endsWithOperationSign = str => {
     // Retorna um booleano avaliando se o string termina com um sinal
-    // de operação
-    console.log(str);
-    return (str.endsWith('+') || str.endsWith('-') ||
-            str.endsWith('x') || str.endsWith('÷'));
+    // de operação e não termina com um dígito
+    let hasOpSigns =  (str.endsWith('+') || str.endsWith('-') ||
+                       str.endsWith('x') || str.endsWith('÷'));
+    let hasDigits = /[0-9]/.test(str.slice(-1));
+    return hasOpSigns && !hasDigits;
 };
 
 function addCharToVisor() {
