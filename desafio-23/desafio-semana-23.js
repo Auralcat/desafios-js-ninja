@@ -54,10 +54,21 @@ let rawMiscSelectors = [ "visor", "ce" ].map(f => {
 let [ $visor, $funcCE ] = [...rawMiscSelectors];
 
 // Funções
+
+const endsWithOperationSign = str => {
+    // Retorna um booleano avaliando se o string termina com um sinal
+    // de operação
+    console.log(str);
+    return (str.endsWith('+') || str.endsWith('-') ||
+            str.endsWith('x') || str.endsWith('÷'));
+};
+
 function addCharToVisor() {
     // Adiciona o caractere ao visor, independente de tipo
     if ($visor.value == "0") {
         $visor.value = this.innerHTML;
+    } else if (endsWithOperationSign($visor.value)) {
+        $visor.value = $visor.value.replace(/.$/, this.innerHTML);
     } else {
         $visor.value = $visor.value + this.innerHTML;
     }
