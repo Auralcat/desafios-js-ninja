@@ -55,11 +55,13 @@ let [ $visor, $funcCE ] = [...rawMiscSelectors];
 
 // Funções
 
+// Constantes
+let opRegex = "[\\+\\-x\\÷]";
+
 const endsWithOperationSign = str => {
     // Retorna um booleano avaliando se o string termina com um sinal
     // de operação e não termina com um dígito
-    let hasOpSigns =  (str.endsWith('+') || str.endsWith('-') ||
-                       str.endsWith('x') || str.endsWith('÷'));
+    let hasOpSigns =  new RegExp(opRegex).test(str.slice(-1));
     let hasDigits = /[0-9]/.test(str.slice(-1));
     return hasOpSigns && !hasDigits;
 };
@@ -80,8 +82,6 @@ const executeCE = () => {
 };
 
 // Funções relacionadas ao processamento do string do visor
-let opRegex = "[\\+\\-x\\÷]";
-
 const getSigns = mainString => {
     // Retorna um array com os sinais das operações em ordem
     return Array.from(new Set(mainString.match(/[\+\-\x\÷]/g)));
