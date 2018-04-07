@@ -1,4 +1,4 @@
-let testString = "25-158-19x90";
+let testString = "25-158x19x90+45";
 
 // Passar as regex uma operação por vez
 let out = [];
@@ -55,4 +55,6 @@ const compute = opString => {
     }
 };
 
-console.log(compute(computeThis));
+let opResult = compute(computeThis);
+let newStr = testString.replace(computeThis, opResult);
+console.log(newStr);
