@@ -70,7 +70,9 @@ function addCharToVisor() {
     // Adiciona o caractere ao visor, independente de tipo
     if ($visor.value == "0") {
         $visor.value = this.innerHTML;
-    } else if (endsWithOperationSign($visor.value)) {
+    } else if (endsWithOperationSign($visor.value) &&
+               !(/[0-9]/.test(this.innerHTML))) {
+        console.log(new RegExp(opRegex).test(this.innerHTML));
         $visor.value = $visor.value.replace(/.$/, this.innerHTML);
     } else {
         $visor.value = $visor.value + this.innerHTML;
