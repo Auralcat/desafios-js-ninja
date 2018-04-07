@@ -54,11 +54,8 @@ let rawMiscSelectors = [ "visor", "ce" ].map(f => {
 let [ $visor, $funcCE ] = [...rawMiscSelectors];
 
 // Funções
-const addDigitToVisor = num => {
-    $visor.value = $visor.value + String(num);
-};
-
-const addOperationToVisor = () => {
+function addCharToVisor() {
+    // Adiciona o caractere ao visor, independente de tipo
     $visor.value = $visor.value + this.innerHTML;
 }
 
@@ -163,5 +160,5 @@ $opResult.addEventListener('click', showCalculationResult);
 
 // Operações
 [ $opPlus, $opMinus, $opMultiply, $opDivide, $opResult ].forEach(op => {
-    op.addEventListener('click', addOperationToVisor);
+    op.addEventListener('click', addCharToVisor);
 });
