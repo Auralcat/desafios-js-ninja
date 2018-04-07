@@ -56,7 +56,11 @@ let [ $visor, $funcCE ] = [...rawMiscSelectors];
 // Funções
 function addCharToVisor() {
     // Adiciona o caractere ao visor, independente de tipo
-    $visor.value = $visor.value + this.innerHTML;
+    if ($visor.value == "0") {
+        $visor.value = this.innerHTML;
+    } else {
+        $visor.value = $visor.value + this.innerHTML;
+    }
 }
 
 const executeCE = () => {
