@@ -8,4 +8,11 @@ describe("Teste desafio 23", function() {
         assert.equal(typeof($digit0), "object");
     });
 
+    it("Botão 0 deve adicionar 0 ao visor", function() {
+        // Pra testar isso, avalie a FUNÇÃO associada ao listener do evento
+        let originalState = $visor.val();
+        addDigitToVisor("0");
+        assert.equal($visor.val(), originalState + "0");
+    });
+
 });
