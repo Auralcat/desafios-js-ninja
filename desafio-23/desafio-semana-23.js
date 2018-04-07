@@ -151,7 +151,8 @@ const calculate = opString => {
 };
 
 const showCalculationResult = () => {
-
+    // Substitui o string de operações pelo string de resultado
+    $visor.value = calculate($visor.value);
 };
 
 // Adicionando os listeners aos elementos selecionados
