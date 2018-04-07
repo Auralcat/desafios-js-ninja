@@ -17,11 +17,14 @@ describe("Teste desafio 23", function() {
         assert.equal($visor.value, "0");
     });
 
-    it("Botão 0 deve adicionar 0 ao visor", function() {
+    it("Botões de dígitos devem colocar o número no visor", function() {
         // Pra testar isso, avalie a FUNÇÃO associada ao listener do evento
         let originalState = $visor.value;
-        addDigitToVisor("0");
-        assert.equal($visor.value, originalState + "0");
+        digits.forEach(n => {
+            addDigitToVisor(n);
+            assert.equal($visor.value, originalState + n);
+            $visor.value = 0;
+        });
     });
 
 });

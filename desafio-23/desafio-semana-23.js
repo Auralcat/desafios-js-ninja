@@ -25,9 +25,11 @@ input;
 */
 
 // Selecionar elementos
+// Constante de testes
+let digits = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ];
+
 // Primeiro vou fazer um array de objetos do DOM
-let rawDigitSelectors = [ "0", "1", "2", "3", "4",
-                          "5", "6", "7", "8", "9" ].map(n => {
+let rawDigitSelectors = digits.map(n => {
     return document.getElementById("digit-" + n);
 });
 
