@@ -4,9 +4,37 @@
 <head>
     <meta charset="UTF-8" />
     <title>Mocha tests</title>
+    <link href="/home/lucas/.nvm/versions/node/v6.11.4/lib/node_modules/mocha/mocha.css" rel="stylesheet" />
 </head>
 
 <body>
+    <div class="html-to-be-tested">
+        <div class="visor">
+            <input id="visor" name="calculator-visor" type="text" value="0" readonly="readonly" />
+        </div>
+        <div class="function-button-panel">
+            <button id="func-CE" class="function-button">CE</button>
+        </div>
+        <div class="button-panel">
+            <button id="digit-1" class="digit-button">1</button>
+            <button id="digit-2" class="digit-button">2</button>
+            <button id="digit-3" class="digit-button">3</button>
+            <button id="digit-4" class="digit-button">4</button>
+            <button id="digit-5" class="digit-button">5</button>
+            <button id="digit-6" class="digit-button">6</button>
+            <button id="digit-7" class="digit-button">7</button>
+            <button id="digit-8" class="digit-button">8</button>
+            <button id="digit-9" class="digit-button">9</button>
+            <button id="digit-0" class="digit-button">0</button>
+        </div>
+        <div class="operator-button-panel">
+            <button id="op-plus" class="op-button">+</button>
+            <button id="op-minus" class="op-button">-</button>
+            <button id="op-multiply" class="op-button">*</button>
+            <button id="op-divide" class="op-button">/</button>
+            <button id="op-result" class="op-button">=</button>
+        </div>
+    </div>
     <h1>Mocha Tests Page</h1>
     <div id="mocha"></div>
     <!-- You need to get the JS files for each module, this is how you import them in the browser -->

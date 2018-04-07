@@ -26,14 +26,14 @@ input;
 
 // Selecionar elementos
 // Primeiro vou fazer um array de objetos do DOM
-let rawDigitSelectors = [ "0", "1", "2", "3",
-                          "4", "5", "6", "7", "8", "9" ].map(n => {
+let rawDigitSelectors = [ "0", "1", "2", "3", "4",
+                          "5", "6", "7", "8", "9" ].map(n => {
     return document.getElementById("digit-" + n);
 });
 
 // Agora vou usar o spread operator pra passar essas variáveis pra outra forma
-let [ $digit0, $digit1, $digit2, $digit3, $digit4, $digit5,
-    $digit6, $digit7, $digit8, $digit9 ] = [...rawDigitSelectors];
+let [ $digit0, $digit1, $digit2, $digit3, $digit4,
+      $digit5, $digit6, $digit7, $digit8, $digit9 ] = [...rawDigitSelectors];
 
 // Operações
 let rawOperatorSelectors =
@@ -45,6 +45,13 @@ let [ $opPlus, $opMinus, $opMultiply, $opDivide, $opResult ] =
         [...rawOperatorSelectors];
 
 // Visor, CE
-let [ $visor, $funcCE ] = [..."visor", "func-ce" ].map(f => {
+let rawMiscSelectors = [ "visor", "func-ce" ].map(f => {
     return document.getElementById(f);
 });
+
+let [ $visor, $funcCE ] = [...rawMiscSelectors];
+
+// Funções
+const addDigitToVisor = num => {
+    $visor.value = $visor.value + String(num);
+};
