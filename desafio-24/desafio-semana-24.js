@@ -16,14 +16,23 @@ var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]
 var $buttonCE = document.querySelector('[data-js="button-ce"]');
 var $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
-Array.prototype.forEach.call($buttonsNumbers, function(button) {
-  button.addEventListener('click', handleClickNumber, false);
-});
-Array.prototype.forEach.call($buttonsOperations, function(button) {
-  button.addEventListener('click', handleClickOperation, false);
-});
-$buttonCE.addEventListener('click', handleClickCE, false);
-$buttonEqual.addEventListener('click', handleClickEqual, false);
+const addClickEventListener = (element, func) => {
+    // É só pra não ficar digitando 'click' e false o tempo inteiro
+    element.addEventListener('click', func, false);
+};
+
+const addListeners = () => {
+    $buttonsNumbers.forEach(function(button) {
+        button.addClickEventListener(handleClickNumber);
+    });
+
+    $buttonsOperations.forEach(function(button) {
+        button.addClickEventListener(handleClickOperation);
+    });
+
+    $buttonCE.addClickEventListener(handleClickCE);
+    $buttonEqual.addClickEventListener(handleClickEqual);
+};
 
 function handleClickNumber() {
   $visor.value += this.value;
