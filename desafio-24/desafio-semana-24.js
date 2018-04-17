@@ -23,22 +23,22 @@ const addClickEventListener = (element, func) => {
 
 const addListeners = () => {
     $buttonsNumbers.forEach(function(button) {
-        button.addClickEventListener(handleClickNumber);
+        button.addClickEventListener(addNumberToVisor);
     });
 
     $buttonsOperations.forEach(function(button) {
-        button.addClickEventListener(handleClickOperation);
+        button.addClickEventListener(addOperatorToVisor);
     });
 
     $buttonCE.addClickEventListener(handleClickCE);
     $buttonEqual.addClickEventListener(handleClickEqual);
 };
 
-const handleClickNumber = () => {
+const addNumberToVisor = () => {
   $visor.value += this.value;
 };
 
-const handleClickOperation = () => {
+const addOperatorToVisor = () => {
   $visor.value = removeLastItemIfItIsAnOperator($visor.value);
   $visor.value += this.value;
 };
