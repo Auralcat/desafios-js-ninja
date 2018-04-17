@@ -19,43 +19,46 @@ let $buttonEqual = document.querySelector('[data-js="button-equal"]');
 const addClickEventListener = (element, func) => {
     // É só pra não ficar digitando 'click' e false o tempo inteiro
     element.addEventListener('click', func, false);
+    // Adiciona um booleano ao elemento
+    element.hasListener = true;
 };
 
 const addListeners = () => {
     $buttonsNumbers.forEach(function(button) {
-        button.addClickEventListener(addNumberToVisor);
+        addClickEventListener(button, addNumberToVisor);
+        console.log(button);
     });
 
     $buttonsOperations.forEach(function(button) {
-        button.addClickEventListener(addOperatorToVisor);
+        addClickEventListener(button, addOperatorToVisor);
     });
 
-    $buttonCE.addClickEventListener(handleClickCE);
-    $buttonEqual.addClickEventListener(handleClickEqual);
+    addClickEventListener($buttonCE, handleClickCE);
+    addClickEventListener($buttonEqual, handleClickEqual);
 };
 
-const addNumberToVisor = () => {
+function addNumberToVisor() {
   $visor.value += this.value;
-};
+}
 
-const addOperatorToVisor = () => {
-  $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+function addOperatorToVisor() {
+  $visor.value = removeLastItem($visor.value);
   $visor.value += this.value;
-};
+}
 
 const handleClickCE = () => {
   $visor.value = 0;
 };
 
 const isLastItemAnOperation = number => {
-  var operations = ['+', '-', 'x', '÷'];
-  var lastItem = number.split('').pop();
+  let operations = ['+', '-', 'x', '÷'];
+  let lastItem = number.split('').pop();
   return operations.some(function(operator) {
     return operator === lastItem;
   });
 };
 
-const removeLastItemIfItIsAnOperator = number => {
+const removeLastItem = number => {
   if(isLastItemAnOperation(number)) {
     return number.slice(0, -1);
   }
@@ -63,12 +66,12 @@ const removeLastItemIfItIsAnOperator = number => {
 };
 
 const handleClickEqual = () => {
-  $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+  $visor.value = removeLastItem($visor.value);
   let allValues = $visor.value.match(/\d+[+x÷-]?/g);
   $visor.value = allValues.reduce(function(accumulated, actual) {
     let firstValue = accumulated.slice(0, -1);
     let operator = accumulated.split('').pop();
-    let lastValue = removeLastItemIfItIsAnOperator(actual);
+    let lastValue = removeLastItem(actual);
     let lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
     switch(operator) {
       case '+':
@@ -82,3 +85,5 @@ const handleClickEqual = () => {
     }
   });
 };
+
+addListeners();
