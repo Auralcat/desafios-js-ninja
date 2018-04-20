@@ -1,140 +1,162 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Desafio 25 Javascript Ninja</title>
-    </head>
-    <body>
-        <section>
-            <h1>Eventos</h1>
-            <ul>
-                <h3>Recursos</h3>
-                <li>cached</li>
-                <li>error</li>
-                <li>abort</li>
-                <li>load</li>
-                <li>beforeunload</li>
-                <li>unload</li>
-            </ul>
-            <ul>
-                <h3>Rede</h3>
-                <li>online</li>
-                <li>offline</li>
-            </ul>
-            <ul>
-                <h3>Foco</h3>
-                <li>focus</li>
-                <li>blur</li>
-            </ul>
-            <ul>Websocket</ul>
- - open
- - message
- - error
- - closed
 
-            <ul>História da Sessão</ul>
- - pagehide
- - pageshow
- - popstate
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 25 Javascript Ninja</title>
+</head>
 
-            <ul>Animações CSS</ul>
- - animationstart
- - animationend
- - animationiteration
+<body>
+    <section>
+        <h1>Eventos</h1>
+        <ul>
+            <h3>Recursos</h3>
+            <li>cached</li>
+            <li>error</li>
+            <li>abort</li>
+            <li>load</li>
+            <li>beforeunload</li>
+            <li>unload</li>
+        </ul>
+        <ul>
+            <h3>Rede</h3>
+            <li>online</li>
+            <li>offline</li>
+        </ul>
+        <ul>
+            <h3>Foco</h3>
+            <li>focus</li>
+            <li>blur</li>
+        </ul>
+        <ul>
+            <h3>Websocket</h3>
+            <li>open</li>
+            <li>message</li>
+            <li>error</li>
+            <li>closed</li>
+        </ul>
+        <ul>
+            <h3>História da Sessão</h3>
+            <li>pagehide</li>
+            <li>pageshow</li>
+            <li>popstate</li>
+        </ul>
 
-            <ul>Transições CSS</ul>
- - transitionstart
- - transitionend
- - transitioncancel
- - transitionrun
+        <ul>
+            <h3>Animações CSS</h3>
+            <li>animationstart</li>
+            <li>animationend</li>
+            <li>animationiteration</li>
+        </ul>
+        <ul>
+            <h3>Transições CSS</h3>
+            <li>transitionstart</li>
+            <li>transitionend</li>
+            <li>transitioncancel</li>
+            <li>transitionrun</li>
+        </ul>
+        <ul>
+            <h3>Formulários</h3>
 
-            <ul>Formulários</ul>
- - reset
- - submit
+            <li>reset</li>
+            <li>submit</li>
+        </ul>
+        <ul>
+            <h3>Impressão</h3>
+            <li>beforeprint</li>
+            <li>afterprint</li>
+        </ul>
+        <ul>
+            <h3>Composição de texto</h3>
+            <li>compositionstart</li>
+            <li>compositionupdate</li>
+            <li>compositionend</li>
+        </ul>
+        <ul>
+            <h3>Views</h3>
 
-            <ul>Impressão</ul>
- - beforeprint
- - afterprint
+            <li>fullscreenchange</li>
+            <li>fullscreenerror</li>
+            <li>resize</li>
+            <li>scroll</li>
+        </ul>
+        <ul>
+            <h3>Área de transferência</h3>
+            <li>cut</li>
+            <li>copy</li>
+            <li>paste</li>
+        </ul>
+        <ul>
+            <h3>Teclado</h3>
 
-            <ul>Composição de texto</ul>
- - compositionstart
- - compositionupdate
- - compositionend
+            <li>keyup</li>
+            <li>keydown</li>
+            <li>keypress</li>
+        </ul>
+        <ul>
+            <h3>Mouse</h3>
+            <li>mouseenter</li>
+            <li>mouseover</li>
+            <li>mousemove</li>
+            <li>mousedown</li>
+            <li>mouseup</li>
+            <li>auxclick</li>
+            <li>click</li>
+            <li>dblclick</li>
+            <li>contextmenu</li>
+            <li>wheel</li>
+            <li>mouseleave</li>
+            <li>mouseout</li>
+            <li>select</li>
+            <li>pointerlockchange</li>
+            <li>pointerlockerror</li>
+        </ul>
+        <ul>
+            <h3>Drag e drop</h3>
+            <li>dragstart</li>
+            <li>drag</li>
+            <li>dragend</li>
+            <li>dragenter</li>
+            <li>dragover</li>
+            <li>dragleave</li>
+            <li>drop</li>
+        </ul>
+        <ul>
+            <h3>Mídia</h3>
+            <li>durationchange</li>
+            <li>loadedmetadata</li>
+            <li>loadeddata</li>
+            <li>canplay</li>
+            <li>canplaythrough</li>
+            <li>ended</li>
+            <li>emptied</li>
+            <li>stalled</li>
+            <li>suspended</li>
+            <li>play</li>
+            <li>playing</li>
+            <li>pause</li>
+            <li>waiting</li>
+            <li>seeking</li>
+            <li>seeked</li>
+            <li>ratechange</li>
+            <li>timeupdate</li>
+            <li>volumechange</li>
+            <li>complete</li>
+            <li>audioprocess</li>
+        </ul>
+        <ul>
+            <h3>Progresso</h3>
+            <li>loadstart</li>
+            <li>progress</li>
+            <li>error</li>
+            <li>timeout</li>
+            <li>abort</li>
+            <li>load</li>
+            <li>loadend</li>
+        </ul>
+    </section>
 
-            <ul>Views</ul>
- - fullscreenchange
- - fullscreenerror
- - resize
- - scroll
+</body>
 
-            <ul>Área de transferência</ul>
- - cut
- - copy
- - paste
-
-            <ul>Teclado</ul>
- - keyup
- - keydown
- - keypress
-
-            <ul>Mouse</ul>
- - mouseenter
- - mouseover
- - mousemove
- - mousedown
- - mouseup
- - auxclick
- - click
- - dblclick
- - contextmenu
- - wheel
- - mouseleave
- - mouseout
- - select
- - pointerlockchange
- - pointerlockerror
-
-            <ul>Drag e drop</ul>
- - dragstart
- - drag
- - dragend
- - dragenter
- - dragover
- - dragleave
- - drop
-
-            <ul>Mídia</ul>
- - durationchange
- - loadedmetadata
- - loadeddata
- - canplay
- - canplaythrough
- - ended
- - emptied
- - stalled
- - suspended
- - play
- - playing
- - pause
- - waiting
- - seeking
- - seeked
- - ratechange
- - timeupdate
- - volumechange
- - complete
- - audioprocess
-
-            <ul>Progresso</ul>
- - loadstart
- - progress
- - error
- - timeout
- - abort
- - load
- - loadend
-        </section>
-
-    </body>
 </html>
