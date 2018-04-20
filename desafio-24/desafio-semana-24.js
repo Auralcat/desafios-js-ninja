@@ -16,17 +16,17 @@ let $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]
 let $buttonCE = document.querySelector('[data-js="button-ce"]');
 let $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
-const addClickEventListener = (element, func) => {
-    // É só pra não ficar digitando 'click' e false o tempo inteiro
-    element.addEventListener('click', func, false);
-    // Adiciona um booleano ao elemento
-    element.hasListener = true;
-};
-
 const addListeners = () => {
+    // Essa função só é usada aqui
+    const addClickEventListener = (element, func) => {
+        // É só pra não ficar digitando 'click' e false o tempo inteiro
+        element.addEventListener('click', func, false);
+        // Adiciona um booleano ao elemento
+        element.hasListener = true;
+    };
+
     $buttonsNumbers.forEach(function(button) {
         addClickEventListener(button, addNumberToVisor);
-        console.log(button);
     });
 
     $buttonsOperations.forEach(function(button) {
